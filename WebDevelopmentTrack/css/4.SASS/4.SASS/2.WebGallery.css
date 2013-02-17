@@ -1,0 +1,19 @@
+body, header, section, footer, article, h1, h2, h3, h4, h5, h6, input, button, label, p, fieldset, nav, ul, li, a, span, strong, em {
+  margin: 0;
+  padding: 0;
+  border: 0; }
+
+div, h1, h3, h4, h5, h6, header, footer, body, section, nav, article, aside {
+  display: block; }
+
+body section form ul {
+  list-style: none; }
+  body section form ul li {
+    margin: 5px;
+    display: inline-block; }
+body section div#full-images input, body section div#full-images img {
+  display: none; }
+body section div#full-images input:checked + .full-image {
+  margin: 5px;
+  display: block; }
+

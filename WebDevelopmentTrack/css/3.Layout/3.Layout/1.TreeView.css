@@ -1,0 +1,17 @@
+﻿ul li ul
+{
+    display: none;
+}
+ul li:hover
+{
+    text-decoration: underline;
+}
+ul li:hover> ul
+{
+    display: block;
+    color: grey;
+}
+ul
+{
+    list-style: none;
+}

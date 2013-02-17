@@ -1,0 +1,67 @@
+﻿body {
+}
+.bold
+{
+    font-weight: bold;
+}
+
+.container
+{
+    background: #eee;
+    border-radius: 30px;
+    display: inline-block;
+}
+    .container h2
+    {
+        padding-left: 30px;
+    }
+div.info > p
+{
+    width: 300px;
+}
+.image
+{
+    border: 1px solid grey;
+    height: 150px;
+}
+.image, .info
+{
+    display: inline-block;
+    margin: 2px;
+}
+.musicCategory
+{
+    display: block;
+    background: #fff;
+    border: 1px solid grey;
+    padding: 20px;
+    margin: 20px;
+    width: 550px;
+}
+.listen, .add
+{
+    font-size: 16pt;
+    color: white;
+    padding-left: 20px;
+}
+.listen, .add
+{
+}
+.listen
+{
+    background: url("images/2-ListenButton.png");
+    width: 136px;
+    height: 45px;
+}
+
+.add
+{
+    background: url("images/2-AddButton.png");
+    width: 112px;
+    height: 45px;
+}
+
+.buttons
+{
+
+}

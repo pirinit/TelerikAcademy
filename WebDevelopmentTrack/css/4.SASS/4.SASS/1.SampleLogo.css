@@ -1,0 +1,137 @@
+.clearfix, body header div#header-container {
+  zoom: 1; }
+  .clearfix:after, body header div#header-container:after {
+    display: block;
+    content: "";
+    height: 0;
+    clear: both; }
+
+.bullet, body aside > ul > li > ul > li {
+  background-image: url("images/li-dot.png");
+  background-repeat: no-repeat;
+  padding-left: 30px; }
+
+body, header, section, footer, article, h1, h2, h3, h4, h5, h6, input, button, label, p, fieldset, nav, ul, li, a, span, strong, em {
+  margin: 0;
+  padding: 0;
+  border: 0; }
+
+div, h1, h3, h4, h5, h6, header, footer, body, section, nav, article, aside {
+  display: block; }
+
+html {
+  width: 1440px; }
+
+body {
+  background: #9215f2;
+  color: white;
+  font: 14px normal Arial; }
+  body header {
+    background: #d593ff;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #d593ff 0%, #c68cf2 5%, #a338f4 15%, #8f19ef 21%, #9215f2 24%, #9215f2 100%) fixed;
+    /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #d593ff), color-stop(5%, #c68cf2), color-stop(15%, #a338f4), color-stop(21%, #8f19ef), color-stop(24%, #9215f2), color-stop(100%, #9215f2)) fixed;
+    /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #d593ff 0%, #c68cf2 5%, #a338f4 15%, #8f19ef 21%, #9215f2 24%, #9215f2 100%) fixed;
+    /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #d593ff 0%, #c68cf2 5%, #a338f4 15%, #8f19ef 21%, #9215f2 24%, #9215f2 100%) fixed;
+    /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #d593ff 0%, #c68cf2 5%, #a338f4 15%, #8f19ef 21%, #9215f2 24%, #9215f2 100%) fixed;
+    /* IE10+ */
+    background: linear-gradient(to bottom, #d593ff 0%, #c68cf2 5%, #a338f4 15%, #8f19ef 21%, #9215f2 24%, #9215f2 100%) fixed;
+    /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d593ff', endColorstr='#9215f2',GradientType=0 );
+    /* IE6-9 */
+    padding: 15px; }
+    body header div#header-container {
+      margin-bottom: 25px; }
+      body header div#header-container div#logo-container {
+        float: left; }
+      body header div#header-container div#reg-form-container {
+        float: right; }
+        body header div#header-container div#reg-form-container form input {
+          margin: 5px;
+          width: 125px;
+          background: #b35ef3;
+          border-radius: 10px;
+          border: 1px solid #603382; }
+        body header div#header-container div#reg-form-container form button {
+          color: white;
+          font-weight: bold;
+          padding: 5px;
+          background: #b35ef3;
+          border: 1px solid white;
+          border-style: outset;
+          padding: 5px 8px;
+          border-radius: 10px; }
+          body header div#header-container div#reg-form-container form button:hover {
+            border-style: inset; }
+    body header nav {
+      padding: 10px;
+      margin: 20px;
+      border: 1px solid black;
+      border-radius: 10px;
+      font-size: 14pt;
+      width: 75%; }
+      body header nav ul#main-nav-list li {
+        padding: 5px;
+        display: inline-block; }
+        body header nav ul#main-nav-list li:hover > a {
+          text-decoration: underline;
+          color: #BBB; }
+        body header nav ul#main-nav-list li:hover ul {
+          display: block; }
+        body header nav ul#main-nav-list li a {
+          color: white;
+          text-decoration: none; }
+        body header nav ul#main-nav-list li ul li {
+          padding: 50px;
+          display: none; }
+  body section {
+    width: 75%;
+    float: left; }
+    body section article {
+      border: 1px solid black;
+      border-radius: 10px;
+      padding: 15px;
+      margin: 20px; }
+      body section article header h1 {
+        font-weight: bold;
+        font-size: 1.2em; }
+      body section article a {
+        text-decoration: none;
+        color: #d08cf7; }
+        body section article a:hover {
+          text-decoration: underline; }
+      body section article footer {
+        text-align: right;
+        padding-bottom: 5px; }
+  body aside {
+    float: right;
+    width: 25%; }
+    body aside > ul > li {
+      list-style: none;
+      border: 1px solid black;
+      border-radius: 5px;
+      margin: 15px;
+      padding: 20px; }
+      body aside > ul > li > ul > li {
+        border: none;
+        list-style: none;
+        margin: 5px; }
+    body aside a {
+      text-decoration: none;
+      color: #aaaaaa; }
+      body aside a:hover {
+        text-decoration: underline; }
+  body footer {
+    clear: both;
+    padding-top: 15px;
+    padding-bottom: 25px;
+    padding-right: 0px;
+    padding-left: 0px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2em; }
+

@@ -1,0 +1,68 @@
+﻿body
+{
+    display: inline-block;
+}
+fieldset
+{
+    width: 215px;
+}
+    fieldset > p
+    {
+        margin: 5px;
+        margin-left: 110px;
+        margin-right: 0px;
+    }
+        fieldset > p:first-of-type
+        {
+            
+        }
+legend
+{
+    text-align: center;
+}
+nav
+{
+    font-weight: bold;
+    border-bottom: 3px solid black;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+section
+{
+    border: 1px solid black;
+    padding: 5px;
+    margin-top: 5px;
+}
+.table, .sliders
+{
+    display: inline-block;
+}
+nav a
+{
+    color: #1ab7f1;
+    font-size: 22pt;
+}
+img
+{
+    display: inline-block;
+    float: left;
+}
+
+.row
+{
+    display: table-row;
+}
+.cell
+{
+    display: table-cell;
+}
+.slider
+{
+    display: block;
+    width:220px;
+    height:65px
+}
+    .sliders > p
+    {
+        text-align: center;
+    }

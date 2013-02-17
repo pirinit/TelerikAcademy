@@ -1,0 +1,49 @@
+﻿table
+{
+    border-collapse:collapse;
+    border: 1px solid #ccc;
+    font-family: Arial;
+    font-size: 16px;
+}
+tr:nth-child(2n+1)
+{
+    background: #fff;
+}
+tr:nth-child(2n)
+{
+    background: #ececd8;
+}
+td
+{
+    vertical-align: middle;
+    padding: 10px;
+    border-left: 1px solid #b5b5b5;
+}
+td.germany, .mexico, .uk
+{
+    padding-left: 42px;
+}
+th
+{
+    background: #56b906;
+    border-bottom: 1px solid #2a7a05;
+    border-collapse: collapse;
+    vertical-align: middle;
+    color: #fff;
+    border-left: 1px solid #b5b5b5;
+    padding: 8px;
+}
+.germany
+{
+    background: url("germany.png") no-repeat 3px;
+}
+
+.mexico
+{
+    background: url("mexico.png") no-repeat 3px;
+}
+
+.uk
+{
+    background: url("uk.png") no-repeat 3px;
+}
