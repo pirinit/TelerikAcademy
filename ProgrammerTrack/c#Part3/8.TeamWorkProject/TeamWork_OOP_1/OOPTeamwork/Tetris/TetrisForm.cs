@@ -22,16 +22,21 @@ namespace Tetris
             InitializeComponent();
             InitializeGame();
             highScoreForm = new HighScoresForm();
+            SubscribeForNewHighscore();
         }
 
         private void InitializeGame()
         {
+            
             grid = new Grid(30, 15);
             GridManager.GetGrid(grid);
             shapeQueue = new ShapeQueue();
             shape = shapeQueue.NextShape();
             shape = shapeQueue.NextShape();
-            
+            ScoreManager.LoadScores();
+            ScoreManager.CurrentScore = 0;//50;
+
+            lblScoreAmount.Text = "0";
             btnRestart.Visible = false;
             btnHighScores.Visible = false;
             timer1.Start();
@@ -47,6 +52,7 @@ namespace Tetris
                 if (!shape.IsShapePossible())
                 {
                     timer1.Stop();
+                    ScoreManager.CheckIfHighscore();
                     btnRestart.Visible = true;
                     btnHighScores.Visible = true;
                 }
@@ -59,24 +65,25 @@ namespace Tetris
 
         private void TetrisForm_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyData == Keys.Down)
+            if (e.KeyData == Keys.Down && timer1.Enabled)
             {
                 shape.MoveAtBottom();
             }
-
-            if (e.KeyData == Keys.Right)
+            else if (e.KeyData == Keys.Right && timer1.Enabled)
             {
                 shape.MoveRight();
             }
-
-            if (e.KeyData == Keys.Left)
+            else if (e.KeyData == Keys.Left && timer1.Enabled)
             {
                 shape.MoveLeft();
             }
-
-            if (e.KeyData == Keys.Space || e.KeyData == Keys.Up)
+            else if (e.KeyData == Keys.Space && timer1.Enabled)
             {
                 shape.Rotate();
+            }
+            else if (e.KeyData == Keys.P)
+            {
+                timer1.Enabled = !timer1.Enabled;
             }
 
             this.Refresh();
@@ -92,7 +99,20 @@ namespace Tetris
         {
             shapeQueue.Draw(e.Graphics);
         }
+
         
+        public void SubscribeForNewHighscore()
+        {
+            ScoreManager.newHighscore += new ScoreManager.NewHighscore(SubmitHighscore);
+        }
+
+        private void SubmitHighscore(ScoreEntry entry)
+        {
+            SubmitHighscoreForm newSubmit = new SubmitHighscoreForm(entry);
+            newSubmit.Show();
+            newSubmit.Focus();
+        }
+
         private void btnRestart_Click(object sender, EventArgs e)
         {
             InitializeGame();
@@ -102,12 +122,14 @@ namespace Tetris
         {
             if (!highScoreForm.IsDisposed)
             {
+                highScoreForm.LoadScores();
                 highScoreForm.Show();
                 highScoreForm.Focus();
             }
             else
             {
                 highScoreForm = new HighScoresForm();
+                highScoreForm.LoadScores();
                 highScoreForm.Show();
                 highScoreForm.Focus();
             }

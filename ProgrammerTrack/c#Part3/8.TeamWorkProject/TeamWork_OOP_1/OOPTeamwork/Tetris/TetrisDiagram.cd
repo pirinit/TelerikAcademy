@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Tetris.ShapesStore.ShapeI" Collapsed="true">
+    <Position X="5.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ShapesStore\ShapeI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Tetris.ShapesStore.ShapeJ" Collapsed="true">
+    <Position X="9.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ShapesStore\ShapeJ.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Tetris.ShapesStore.ShapeL" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ShapesStore\ShapeL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Tetris.ShapesStore.ShapeO" Collapsed="true">
+    <Position X="2.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ShapesStore\ShapeO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Tetris.ShapesStore.ShapeS" Collapsed="true">
+    <Position X="4" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ShapesStore\ShapeS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Tetris.ShapesStore.ShapeT" Collapsed="true">
+    <Position X="7.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ShapesStore\ShapeT.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Tetris.ShapesStore.ShapeZ" Collapsed="true">
+    <Position X="11" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ShapesStore\ShapeZ.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Tetris.Block" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="3.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAGAAAAAAoAAAgACAAEAAzACAAEAAgAIQEAAAAAAEAA=</HashCode>
+      <FileName>Block.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.184" />
+  </Class>
+  <Class Name="Tetris.Grid" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAChAAAAgYAQAAAAECAAQAAAAACgAAAAAAAAAA=</HashCode>
+      <FileName>Grid.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Tetris.GridManager" Collapsed="true">
+    <Position X="0.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAhAIAAAQAQAAAAEAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GridManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Tetris.HighScoresForm" Collapsed="true">
+    <Position X="7.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABACBAAAAABACoAAAiAAAIAAAEAIAAIAAAAYA=</HashCode>
+      <FileName>HighScores.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Tetris.ScoreManager" Collapsed="true">
+    <Position X="5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABRQAIABAAAABAqAQAAIAAAAAAAAAAABAAAAgCBABAA=</HashCode>
+      <FileName>ScoreManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Tetris.Shape" Collapsed="true">
+    <Position X="5.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAABAAAAgABAAAAAQECEAAAAAAIQEAAAAAAFAQ=</HashCode>
+      <FileName>Shape.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Tetris.ShapeFactory" Collapsed="true">
+    <Position X="2.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>ShapeFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Tetris.ShapeQueue" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAgAgAAAAACAAAAAAAAAAAAAAAAAABAA=</HashCode>
+      <FileName>ShapeQueue.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Tetris.SubmitHighscoreForm" Collapsed="true">
+    <Position X="7.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAACAAAAgAAICABAACAAAAAAEAAAAAAECAAAQ=</HashCode>
+      <FileName>SubmitHighscore.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Tetris.TetrisForm" Collapsed="true">
+    <Position X="7.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AARAAAAgACIAAAgABACIAgIigAAAKgABAAIABAAAJAA=</HashCode>
+      <FileName>TetrisForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="Tetris.ScoreEntry" Collapsed="true">
+    <Position X="5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAAAIAAQAAAIEAAACAAAAAAAAAAA=</HashCode>
+      <FileName>ScoreEntry.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Interface Name="Tetris.Interfaces.IDrawable" Collapsed="true">
+    <Position X="10.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IDrawable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Tetris.Interfaces.IGrid" Collapsed="true">
+    <Position X="10.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAhAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IGrid.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Tetris.Interfaces.IMovable" Collapsed="true">
+    <Position X="10.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAAAAAAAAAAAAAAAAAIQEAAAAAAEAA=</HashCode>
+      <FileName>Interfaces\IMovable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

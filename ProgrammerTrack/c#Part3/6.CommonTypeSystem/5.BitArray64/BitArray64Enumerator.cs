@@ -53,7 +53,7 @@ namespace _5.ClassBitArray64
 
         public void Reset()
         {
-            throw new NotImplementedException();
+            this.position = -1;
         }
     }
 }

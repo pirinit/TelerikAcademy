@@ -15,7 +15,27 @@ namespace Tetris
         static private List<ScoreEntry> scores;
         static int currentScore = 0;
         static public int LinesDestroyed { get; set; }
+        static public int CurrentScore { get { return currentScore; } set { currentScore = value; } }
 
+        public delegate void NewHighscore(ScoreEntry entry);
+        static public event NewHighscore newHighscore;
+
+        static public void LoadScores()
+        {
+            LoadFile();
+        }
+
+        static public void CheckIfHighscore()
+        {
+            foreach (var item in scores)
+            {
+                if (currentScore > item.Score)
+                {
+                    newHighscore(new ScoreEntry(currentScore));
+                    break;
+                }
+            }
+        }
 
         static public void Update(Label scoreLabel)
         {
@@ -24,25 +44,31 @@ namespace Tetris
             scoreLabel.Text = currentScore.ToString();
         }
 
-        static internal List<ScoreEntry> LoadFile()
+        static public List<ScoreEntry> GetScores()
         {
-            StreamReader reader = new StreamReader(FileName);
+            return scores;
+        }
+
+        static void LoadFile()
+        {
             string textFromFile = null;
             try
             {
                 StreamReader reader = new StreamReader(FileName);
-                textFromFile = reader.ReadToEnd();
+                using (reader)
+                {
+                    textFromFile = reader.ReadToEnd();
+                }
+
             }
-            catch (FileNotFoundException ex)
+            catch (FileNotFoundException)
             {
-                this.scores = Reset();
-                return this.scores;
+                scores = Reset();
             }
 
             string decodedText = DecodeString(textFromFile);
 
             scores = ExtractScoreEntriesFromString(decodedText);
-            return scores;
         }
 
         static internal void AddScore(ScoreEntry score)
@@ -84,7 +110,7 @@ namespace Tetris
             }
         }
 
-        internal List<ScoreEntry> Reset()
+        static internal List<ScoreEntry> Reset()
         {
             List<ScoreEntry> dummyScores = new List<ScoreEntry>();
             for (int i = 0; i < 3; i++)

@@ -73,6 +73,12 @@
     <Compile Include="HighScores.Designer.cs">
       <DependentUpon>HighScores.cs</DependentUpon>
     </Compile>
+    <Compile Include="SubmitHighscore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubmitHighscore.Designer.cs">
+      <DependentUpon>SubmitHighscore.cs</DependentUpon>
+    </Compile>
     <Compile Include="TetrisForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="HighScores.resx">
       <DependentUpon>HighScores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubmitHighscore.resx">
+      <DependentUpon>SubmitHighscore.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TetrisForm.resx">
       <DependentUpon>TetrisForm.cs</DependentUpon>
@@ -105,6 +114,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="TetrisDiagram.cd" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

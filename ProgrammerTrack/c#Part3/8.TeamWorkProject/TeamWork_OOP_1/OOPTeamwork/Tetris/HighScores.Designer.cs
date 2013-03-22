@@ -36,6 +36,7 @@
             this.lblFirstScore = new System.Windows.Forms.Label();
             this.lblSecondScore = new System.Windows.Forms.Label();
             this.lblThirdScore = new System.Windows.Forms.Label();
+            this.btnClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblFirst
@@ -83,7 +84,7 @@
             // lblFirstScore
             // 
             this.lblFirstScore.AutoSize = true;
-            this.lblFirstScore.Location = new System.Drawing.Point(121, 53);
+            this.lblFirstScore.Location = new System.Drawing.Point(129, 53);
             this.lblFirstScore.Name = "lblFirstScore";
             this.lblFirstScore.Size = new System.Drawing.Size(0, 13);
             this.lblFirstScore.TabIndex = 5;
@@ -91,7 +92,7 @@
             // lblSecondScore
             // 
             this.lblSecondScore.AutoSize = true;
-            this.lblSecondScore.Location = new System.Drawing.Point(121, 79);
+            this.lblSecondScore.Location = new System.Drawing.Point(129, 79);
             this.lblSecondScore.Name = "lblSecondScore";
             this.lblSecondScore.Size = new System.Drawing.Size(0, 13);
             this.lblSecondScore.TabIndex = 6;
@@ -99,16 +100,27 @@
             // lblThirdScore
             // 
             this.lblThirdScore.AutoSize = true;
-            this.lblThirdScore.Location = new System.Drawing.Point(121, 101);
+            this.lblThirdScore.Location = new System.Drawing.Point(129, 101);
             this.lblThirdScore.Name = "lblThirdScore";
             this.lblThirdScore.Size = new System.Drawing.Size(0, 13);
             this.lblThirdScore.TabIndex = 7;
+            // 
+            // btnClose
+            // 
+            this.btnClose.Location = new System.Drawing.Point(90, 128);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.TabIndex = 8;
+            this.btnClose.Text = "&Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.bntClose_Click);
             // 
             // HighScoresForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(260, 163);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.lblThirdScore);
             this.Controls.Add(this.lblSecondScore);
             this.Controls.Add(this.lblFirstScore);
@@ -117,7 +129,9 @@
             this.Controls.Add(this.lblThird);
             this.Controls.Add(this.lblSecond);
             this.Controls.Add(this.lblFirst);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "HighScoresForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HighScores";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -134,5 +148,6 @@
         private System.Windows.Forms.Label lblFirstScore;
         private System.Windows.Forms.Label lblSecondScore;
         private System.Windows.Forms.Label lblThirdScore;
+        private System.Windows.Forms.Button btnClose;
     }
 }

@@ -66,7 +66,7 @@
             this.btnRestart.Location = new System.Drawing.Point(346, 287);
             this.btnRestart.Name = "btnRestart";
             this.btnRestart.Size = new System.Drawing.Size(75, 23);
-            this.btnRestart.TabIndex = 100;
+            this.btnRestart.TabIndex = 5;
             this.btnRestart.Text = "&Restart";
             this.btnRestart.UseVisualStyleBackColor = true;
             this.btnRestart.Visible = false;
@@ -85,8 +85,8 @@
             this.btnHighScores.Location = new System.Drawing.Point(346, 317);
             this.btnHighScores.Name = "btnHighScores";
             this.btnHighScores.Size = new System.Drawing.Size(75, 23);
-            this.btnHighScores.TabIndex = 102;
-            this.btnHighScores.Text = "High Scores";
+            this.btnHighScores.TabIndex = 10;
+            this.btnHighScores.Text = "High &Scores";
             this.btnHighScores.UseVisualStyleBackColor = true;
             this.btnHighScores.Click += new System.EventHandler(this.btnHighScores_Click);
             // 

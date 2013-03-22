@@ -57,5 +57,12 @@ namespace Tetris
             this.score = score;
             this.demolishedRows = demolishedRows;
         }
+
+        public ScoreEntry(int score)
+        {
+            this.score = score;
+            this.name = string.Empty;
+            demolishedRows = 0;
+        }
     }
 }
