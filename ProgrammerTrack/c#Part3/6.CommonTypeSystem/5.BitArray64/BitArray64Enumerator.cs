@@ -34,7 +34,6 @@ namespace _5.ClassBitArray64
 
         public void Dispose()
         {
-            //throw new NotImplementedException();
         }
 
         object IEnumerator.Current
