@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Battery">
+    <Position X="0.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAAEAAAAAAAAAAAAAAAAAAgAIAAIQCg=</HashCode>
+      <FileName>Battery.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Call">
+    <Position X="7" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAEAAAAQAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Call.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Display">
+    <Position X="11.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAABAAAAAAAAAEAAAAAAAAAAAAAACAAAAAgAAAAAA=</HashCode>
+      <FileName>Display.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GSM">
+    <Position X="4.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAghAQCIAQAAgAAEAAAAgQAQAgEAAAIAAAgAAAAMAAA=</HashCode>
+      <FileName>GSM.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="battery" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Field Name="callHistory" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="GSMCallHistoryTest">
+    <Position X="8.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQCAAAAAA=</HashCode>
+      <FileName>GSMCallHistoryTest .cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GSMTest">
+    <Position X="10.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>GSMTest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="_1.Define3MainClasses.Define3MainClasses">
+    <Position X="8.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Define3MainClasses.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="BatteryType">
+    <Position X="7" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAgAAAAAAACAAAAAABAAAAAAQ=</HashCode>
+      <FileName>BatteryType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
