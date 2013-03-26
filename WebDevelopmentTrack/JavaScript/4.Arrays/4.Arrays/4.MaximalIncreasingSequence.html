@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>JS Console - Example</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	
+</head>
+<body>
+	<label for="tb-string1">Enter numbers here, use " " (space) for delimiter: </label>
+    <br />
+	<input type="text" id="tb-string1" />
+	<br />
+	<a href="#" onclick="Execute()">Find maximal increasing sequense</a>
+	<div id="console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+	    /* 4. Write a script that finds the maximal increasing sequence in an array.
+        Example: {3, 2, 3, 4, 2, 2, 4}  {2, 3, 4}.
+        */
+	    function Execute() {
+	        var string = document.getElementById("tb-string1").value;
+	        var numbersStr = string.split(" ");
+	        var numbers = new Array();
+
+
+	        for (var i = 0; i < numbersStr.length; i++) {
+	            if (numbersStr[i] != "") {
+	                numbers.push(parseInt(numbersStr[i]));
+	            }
+	        }
+
+	        debugger;
+
+	        var maxSequenceStart = 0;
+	        var maxSequenceEnd = 0;
+
+	        for (var i = 0; i < numbers.length; i++) {
+	            var lastElement = numbers[i];
+	            var sequenceStart = i;
+                var sequenceEnd = i;
+	            for (var j = i+1; j < numbers.length; j++) {
+	                if (lastElement <= numbers[j]) {
+	                    lastElement = numbers[j];
+	                    sequenceEnd++;
+	                }
+	                else {
+	                    if ((maxSequenceEnd - maxSequenceStart) < (sequenceEnd - sequenceStart)) {
+	                        maxSequenceStart = sequenceStart;
+	                        maxSequenceEnd = sequenceEnd;
+	                    }
+	                    break;
+	                }
+	            }
+	        }
+
+	        jsConsole.writeLine("Maximal increasing sequense is:");
+	        for (var i = maxSequenceStart; i <= maxSequenceEnd; i++) {
+	            jsConsole.writeLine(numbers[i] + ", ");
+	        }
+	    }
+	</script>
+</body>
+</html>

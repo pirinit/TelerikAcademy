@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>JS Console - Example</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	
+</head>
+<body>
+	<label for="tb-string1">Enter numbers here, use " " (space) for delimiter: </label>
+    <br />
+	<input type="text" id="tb-string1" />
+	<br />
+	<a href="#" onclick="Execute()">Sort array using selection sort</a>
+	<div id="console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+	    /* 6. Write a program that finds the most frequent number in an array. Example:
+	    {4, 1, 1, 4, 2, 3, 4, 4, 1, 2, 4, 9, 3}  4 (5 times)
+        */
+	    function Execute() {
+	        var string = document.getElementById("tb-string1").value;
+	        var numbersStr = string.split(" ");
+	        var numbers = new Array();
+	        
+
+	        for (var i = 0; i < numbersStr.length; i++) {
+	            if (numbersStr[i] != "") {
+	                numbers.push(parseInt(numbersStr[i]));
+	            }
+	        }
+	        debugger;
+            //new array to hold the frequency of every number in numbers
+	        var frequencyArray = [];
+
+	        for (var i = 0; i < numbers.length; i++) {
+	            if (frequencyArray[numbers[i]] == undefined) {
+	                frequencyArray[numbers[i]] = 1;
+	            }
+	            else {
+	                frequencyArray[numbers[i]]++;
+	            }
+	        }
+	        
+	        var mostFrequantNumber = numbers[0];
+	        for (var i in frequencyArray) {
+	            if (frequencyArray[mostFrequantNumber] < frequencyArray[i]) {
+	                mostFrequantNumber = i;
+	            }
+	        }
+
+	        jsConsole.writeLine("The most frequent number is " + mostFrequantNumber + "( " + frequencyArray[mostFrequantNumber] + " times )");
+	    }
+	</script>
+</body>
+</html>

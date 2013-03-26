@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>JS Console - Example</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	
+</head>
+<body>
+	<label for="tb-string1">Enter numbers here, use " " (space) for delimiter: </label>
+    <br />
+	<input type="text" id="tb-string1" />
+	<br />
+	<a href="#" onclick="Execute()">Find maximal sequense</a>
+	<div id="console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+	    /* 3. Write a script that finds the maximal sequence of equal elements in an array.
+		Example: {2, 1, 1, 2, 3, 3, 2, 2, 2, 1}  {2, 2, 2}.
+        */
+	    function Execute() {
+	        var string = document.getElementById("tb-string1").value;
+	        var numbers = string.split(" ");
+
+	        debugger;
+
+	        var currentNumber = numbers[0];
+	        var currentNumberCount = 1;
+	        var maxNumber = currentNumber;
+	        var maxNumberCount = currentNumberCount;
+	        for (var i = 1; i < numbers.length; i++) {
+	            if (numbers[i] == currentNumber) {
+	                currentNumberCount++;
+	            }
+	            else {
+	                if (currentNumberCount > maxNumberCount) {
+	                    maxNumberCount = currentNumberCount;
+	                    maxNumber = currentNumber;
+	                }
+	                currentNumber = numbers[i];
+	                currentNumberCount = 1;
+	            }
+	        }
+
+	        jsConsole.writeLine("Longest sequence of equal elemnts is " + maxNumberCount + " times " + maxNumber + ".");
+	    }
+	</script>
+</body>
+</html>

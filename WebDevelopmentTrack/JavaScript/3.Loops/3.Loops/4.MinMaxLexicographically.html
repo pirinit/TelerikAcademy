@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>JS Console - Example</title>
+        <link href="styles/js-console.css" rel="stylesheet" />
+
+    </head>
+    <body>
+        <label for="tb-number">Number: </label>
+        <input type="text" id="tb-number" />
+        <br />
+        <a href="#" onclick="Execute()">Max and Min in sequence</a>
+        <div id="console">
+        </div>
+        <script src="scripts/js-console.js">	  
+        </script>
+        <script>
+            // 4. Write a script that finds the lexicographically smallest and largest property in document, window and navigator objects
+            function Execute() {
+                var documentArr = new Array();
+                var windowArr = new Array();
+                var navigatorArr = new Array();
+                debugger;
+
+                for (var element in document) {
+                    documentArr.push(element);
+                }
+                jsConsole.writeLine("Max in doucment is " + Max(documentArr));
+                jsConsole.writeLine("Min in document is " + Min(documentArr));
+
+                for (var element in window) {
+                    windowArr.push(element);
+                }
+                jsConsole.writeLine("Max in window is " + Max(windowArr));
+                jsConsole.writeLine("Min in window is " + Min(windowArr));
+
+                for (var element in navigator) {
+                    navigatorArr.push(element);
+                }
+                jsConsole.writeLine("Max in navigator is " + Max(navigatorArr));
+                jsConsole.writeLine("Min in navigator is " + Min(navigatorArr));                
+            }
+
+            function Max(sequence) {
+                var max = sequence[0];;
+                for (var i = 1; i < sequence.length; i++) {
+                    if (max < sequence[i]) {
+                        max = sequence[i];
+                    }
+                }
+                return max;
+            }
+
+            function Min(sequence) {
+                var min = sequence[0];
+                for (var i = 1; i < sequence.length; i++) {
+                    if (min > sequence[i]) {
+                        min = sequence[i];
+                    }
+                }
+                return min;
+            }
+        </script>
+    </body>
+</html>

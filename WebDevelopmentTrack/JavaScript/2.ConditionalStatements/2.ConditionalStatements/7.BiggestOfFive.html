@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>JS Console - Example</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	
+</head>
+<body>
+	<label for="tb-first">First number: </label>
+	<input type="text" id="tb-first" />
+	<br />
+    <label for="tb-second">Second number: </label>
+	<input type="text" id="tb-second" />
+	<br />
+    <label for="tb-third">Third number: </label>
+	<input type="text" id="tb-third" />
+	<br />
+    <label for="tb-fourth">Fourth number: </label>
+	<input type="text" id="tb-fourth" />
+	<br />
+    <label for="tb-fifth">Fifth number: </label>
+	<input type="text" id="tb-fifth" />
+	<br />
+	<a href="#" onclick="Execute()">Biggest of five</a>
+	<div id="console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+	    //7. Write a script that finds the greatest of given 5 variables.
+		function Execute() {
+		    var first = jsConsole.readFloat("#tb-first");
+		    var second = jsConsole.readFloat("#tb-second");
+		    var third = jsConsole.readFloat("#tb-third");
+		    var fourth = jsConsole.readFloat("#tb-fourth");
+		    var fifth = jsConsole.readFloat("#tb-fifth");
+
+		    var biggest = first;
+		    
+		    if (biggest < second) {
+		        biggest = second;
+		    }
+		    if (biggest < third) {
+		        biggest = third;
+		    }
+		    if (biggest < fourth) {
+		        biggest = fourth;
+		    }
+		    if (biggest < fifth) {
+		        biggest = fifth;
+		    }
+		    
+
+		    jsConsole.writeLine("The biggest number is " + biggest + ".");
+		}
+	</script>
+</body>
+</html>

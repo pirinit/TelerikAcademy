@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>JS Console - Example</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	
+</head>
+<body>
+    <label for="tb-arraySize">Number of elements in the array: </label>
+	<input type="text" id="tb-arraySize" />
+	<br />
+	<a href="#" onclick="Execute()">Binary Search</a>
+	<div id="console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+	    /* 7. Write a program that finds the index of given element in
+        a sorted array of integers by using the binary search algorithm (find it in Wikipedia)
+        */
+	    function Execute() {
+	        var arraySize = jsConsole.readInteger("#tb-arraySize");
+	        var numbers = []
+	        debugger;
+	        for (var i = 0; i < arraySize; i++) {
+	            numbers[i] = parseInt( Math.random() * 10000);
+	        }
+
+	        var targetElement = numbers[0];
+	        jsConsole.writeLine("Array with randomly generated elements:");
+	        jsConsole.writeLine(numbers.join(', '));
+	        jsConsole.writeLine("Element to look for using BinerySearch: " + targetElement);
+
+	        numbers = SelectionSort(numbers, 0);
+	        jsConsole.writeLine("Sorted array with randomly generated elements:");
+	        jsConsole.writeLine(numbers.join(', '));
+
+	        var index = BinarySearch(numbers, targetElement);
+	        jsConsole.writeLine("The index of the targetElement(" + targetElement + ") in the array is: " + index);
+
+	        index = BinarySearch(numbers, 15000);
+	        jsConsole.writeLine("The index of the targetElement(15000, not present in the array) in the array is: " + index);
+	    }
+
+	    function BinarySearch(array, element) {
+	        var start = 0;
+	        var end = array.length - 1;
+	        var middle;
+	        while (start <= end) {
+	            middle = Math.floor(start + (end - start) / 2);
+	            if (array[middle] == element) {
+                    //we have found the index of the element
+	                return middle;
+	            }
+	            else if (array[middle] > element) {
+	                //the answer is in the lower part of the interval
+	                end = middle - 1
+	            }
+	            else {
+	                //the answer is in the upper part of the interval
+	                start = middle + 1;
+	            }
+	        }
+            //we have not found a match so the return value is -1
+	        return -1;
+	    }
+
+	    function SelectionSort(array, start) {
+	        if (start == array.length - 1) {
+	            return array;
+	        }
+	        var smallestElementIndex = start;
+	        //finding the index of the smallest element in the range start - end of array
+	        for (var i = start; i < array.length; i++) {
+	            if (array[smallestElementIndex] > array[i]) {
+	                smallestElementIndex = i;
+	            }
+	        }
+	        //putting the smallest element at strat position
+	        var temp = array[smallestElementIndex];
+	        array[smallestElementIndex] = array[start];
+	        array[start] = temp;
+	        //recurssivly calling SelectionSort for the rest of the array (start+1 - end of array)
+	        return SelectionSort(array, start + 1);
+	    }
+
+	    function PrintArray(array) {
+	        for (var i = 0; i < array.length; i++) {
+	            jsConsole.writeLine(array[i] + ", ");
+	        }
+	    }
+	</script>
+</body>
+</html>

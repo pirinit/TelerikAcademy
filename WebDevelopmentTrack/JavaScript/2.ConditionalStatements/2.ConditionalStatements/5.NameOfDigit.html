@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>JS Console - Example</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	
+</head>
+<body>
+	<label for="tb-digit">Digit: </label>
+	<input type="text" id="tb-digit" />
+	<br />
+	<a href="#" onclick="Execute()">Name of the digit</a>
+	<div id="console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+	    //4. Sort 3 real values in descending order using nested if statements.
+		function Execute() {
+		    var digit = jsConsole.readFloat("#tb-digit");
+		    var digitName;
+		    switch (digit) {
+		        case 0:
+		            digitName = "zero";
+		            break;
+		        case 1:
+		            digitName = "one";
+		            break;
+		        case 2:
+		            digitName = "two";
+		            break;
+		        case 3:
+		            digitName = "three";
+		            break;
+		        case 4:
+		            digitName = "four";
+		            break;
+		        case 5:
+		            digitName = "five";
+		        case 6:
+		            digitName = "six";
+		            break;
+		        case 7:
+		            digitName = "seven";
+		        case 8:
+		            digitName = "eight";
+		            break;
+		        case 9:
+		            digitName = "nine";
+		            break;
+		    }
+		    jsConsole.writeLine("The name of the digit is " + digitName + ".");
+		}
+	</script>
+</body>
+</html>

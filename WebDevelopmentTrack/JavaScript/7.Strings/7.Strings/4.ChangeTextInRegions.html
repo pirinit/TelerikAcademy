@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>JS Console - Example</title>
+        <link href="styles/js-console.css" rel="stylesheet" />
+
+    </head>
+    <body>
+        <label for="tb-text">Enter some text</label>
+        <br />
+        <textarea rows="10" cols="40" id="tb-text"></textarea>
+        <br />
+        <a href="#" onclick="Execute()">Process text</a>
+        <div id="console">
+        </div>
+        <script src="scripts/js-console.js">	  
+        </script>
+        <script>
+            /* 4. You are given a text. Write a function that changes the text in all regions:
+            <upcase>text</upcase> to uppercase.
+            <lowcase>text</lowcase> to lowercase
+            <mixcase>text</mixcase> to mix casing(random)
+
+            We are <mixcase>living</mixcase> in a <upcase>yellow submarine</upcase>. We <mixcase>don't</mixcase> have <lowcase>anything</lowcase> else.
+            The expected result:
+            We are LiVinG in a YELLOW SUBMARINE. We dOn'T have anything else.
+            Regions can be nested
+            */
+            function getRandomArbitary(min, max) {
+                var result = Math.random() * (max - min) + min;
+                return Math.floor(result);
+            }
+
+            CaseEnum = {
+                NORMALCASE: { StartTag: '', EndTag: '' },
+                UPCASE: { StartTag: '<upcase>', EndTag: '</upcase>' },
+                LOWCASE: { StartTag: '<lowcase>', EndTag: '</lowcase>' },
+                MIXCASE: { StartTag: '<mixcase>', EndTag: '</mixcase>' },
+            }
+
+            function Execute() {
+                var text = jsConsole.read("#tb-text");
+                //test text
+                //text = 'Normal text <mixcase>mix case text <upcase>upper case text in mix case tag <lowcase>nested low text case </lowcase> some more upper text case in mix case tag</upcase> second part of mixed text case</mixcase> some normal text again <upcase>upper text case</upcase>. We <mixcase>don\'t</mixcase> have <lowcase>anything</lowcase> else.';
+                jsConsole.writeLine("Result is: ");
+                var processedText = ProcessText(text, CaseEnum.NORMALCASE);
+                jsConsole.writeLine(processedText);
+            }
+
+            function ProcessText(text, charCase) {
+                if(text.length == 0){
+                    return "";
+                }
+                text = new String(text);
+                var upCaseIndex = text.indexOf(CaseEnum.UPCASE.StartTag);
+                var lowCaseIndex = text.indexOf(CaseEnum.LOWCASE.StartTag);
+                var mixCaseIndex = text.indexOf(CaseEnum.MIXCASE.StartTag);
+
+                if(upCaseIndex== -1){
+                    upCaseIndex = Number.MAX_VALUE;
+                }
+                if(lowCaseIndex == -1){
+                    lowCaseIndex = Number.MAX_VALUE;
+                }
+                if(mixCaseIndex == -1){
+                    mixCaseIndex = Number.MAX_VALUE;
+                }
+
+                var subCharCase = charCase;
+                var first = text;
+                var second = '';
+                var third = '';
+
+
+                if (upCaseIndex != Number.MAX_VALUE && upCaseIndex < lowCaseIndex && upCaseIndex < mixCaseIndex) {
+                    //process upcase
+                    subCharCase = CaseEnum.UPCASE;
+                    var upCaseEndIndex = text.indexOf(CaseEnum.UPCASE.EndTag);
+                    first = text.substring(0, upCaseIndex);
+                    second = text.substring(upCaseIndex + CaseEnum.UPCASE.StartTag.length, upCaseEndIndex);
+                    third = text.substr(upCaseEndIndex + CaseEnum.UPCASE.EndTag.length);
+                }
+                else if (lowCaseIndex != Number.MAX_VALUE && lowCaseIndex < upCaseIndex && lowCaseIndex < mixCaseIndex) {
+                    //process lowcase
+                    subCharCase = CaseEnum.LOWCASE;
+                    var lowCaseEndIndex = text.indexOf(CaseEnum.LOWCASE.EndTag);
+                    first = text.substring(0, lowCaseIndex);
+                    second = text.substring(lowCaseIndex + CaseEnum.LOWCASE.StartTag.length, lowCaseEndIndex);
+                    third = text.substring(lowCaseEndIndex + CaseEnum.LOWCASE.EndTag.length);
+                }
+                else if (mixCaseIndex != Number.MAX_VALUE && mixCaseIndex < upCaseIndex && mixCaseIndex < lowCaseIndex) {
+                    //process mixcase
+                    subCharCase = CaseEnum.MIXCASE;
+                    var mixCaseEndIndex = text.indexOf(CaseEnum.MIXCASE.EndTag);
+                    first = text.substring(0, mixCaseIndex);
+                    second = text.substring(mixCaseIndex + CaseEnum.MIXCASE.StartTag.length, mixCaseEndIndex);
+                    third = text.substring(mixCaseEndIndex + CaseEnum.MIXCASE.EndTag.length);
+                }
+
+                first = ChangeCase(first, charCase);
+                second = ProcessText(second, subCharCase);
+                third = ProcessText(third, charCase);
+                return first + second + third;
+            }
+
+            function ChangeCase(text, charCase) {
+                switch (charCase) {
+                    case CaseEnum.NORMALCASE:
+                        return text;
+                    case CaseEnum.UPCASE:
+                        return text.toUpperCase();
+                    case CaseEnum.LOWCASE:
+                        return text.toLowerCase();
+                    case CaseEnum.MIXCASE:
+                        return TextToMixCase(text);
+                }
+            }
+
+            function TextToMixCase(text) {
+                var result = '';
+                for (var i = 0; i < text.length; i++) {
+                    switch (getRandomArbitary(0, 2)) {
+                        case 0:
+                            result += text[i].toUpperCase();
+                            continue;
+                        case 1:
+                            result += text[i].toLowerCase();
+                            continue;
+                    }
+                }
+
+                return result;
+            }
+        </script>
+    </body>
+</html>

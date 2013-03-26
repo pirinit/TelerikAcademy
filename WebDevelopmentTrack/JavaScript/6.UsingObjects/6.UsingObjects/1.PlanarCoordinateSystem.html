@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>JS Console - Example</title>
+        <link href="styles/js-console.css" rel="stylesheet" />
+
+    </head>
+    <body>
+        <a href="#" onclick="Execute()">Test Planar Coordinate System</a>
+        <div id="console">
+        </div>
+        <script src="scripts/js-console.js">	  
+        </script>
+        <script>
+            /* 1. Write functions for working with shapes in  standard Planar coordinate system
+            Points are represented by coordinates P(X, Y)
+            Lines are represented by two points, marking their beginning and ending
+            L(P1(X1,Y1),P2(X2,Y2))
+            Calculate the distance between two points
+            Check if three lines can form a triangle
+            */
+            function Execute() {
+                var samplePoint = new Point(5, 5);
+                var otherPoint = new Point(10, 10);
+
+                var line = new Line(samplePoint, otherPoint);
+                var otherLine = new Line(new Point(0, 0), new Point(10, 10));
+                //// third line is long enough to form a triangle 
+                //var thirdLine = new Line(new Point(0, 0), new Point(0, 10));
+
+                //third line is NOT long enough to form a triangle
+                var thirdLine = new Line(new Point(0, 0), new Point(0, 3));
+                
+                jsConsole.writeLine("The lenght of \"line\" is " + line.Length);
+                jsConsole.writeLine("Is it possible to form a triangle? " + IsTrianglePossible(line, otherLine, thirdLine));
+            }
+
+            function Point(x, y) {
+                this.X = x;
+                this.Y = y;
+            }
+
+            function Line(firstpoint, secondPoint) {
+                this.FirstPoint = firstpoint;
+                this.SecondPoint = secondPoint;
+                this.Length = DistanceBetweenPoints(this.FirstPoint, this.SecondPoint);
+            }
+
+            function DistanceBetweenPoints(firstPoint, secondPoint) {
+                var deltaX = firstPoint.X - secondPoint.X;
+                var deltaY = firstPoint.Y - secondPoint.Y;
+                var distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+                return distance;
+            }
+
+            function IsTrianglePossible(line1, line2, line3) {
+                if (line1.Length < line2.Length + line3.Length
+                    && line2.Length < line1.Length + line3.Length
+                    && line3.Length < line1.Length + line2.Length) {
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            }
+        </script>
+    </body>
+</html>

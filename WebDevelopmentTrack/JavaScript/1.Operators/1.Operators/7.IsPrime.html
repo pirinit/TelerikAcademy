@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>JS Console - Example</title>
+        <link href="styles/js-console.css" rel="stylesheet" />
+
+    </head>
+    <body>
+        <label for="tb-number">Number: </label>
+        <input type="text" id="tb-number" />
+        <br />
+        <!--<label for="tb-height">Height: </label>
+        <input type="text" id="tb-height" />
+        <br />-->
+        <a href="#" onclick="Execute()">Is prime?</a>
+        <div id="console">
+        </div>
+        <script src="scripts/js-console.js">	  
+        </script>
+        <script>
+            // 7. Write an expression that checks if given positive integer number n (n ≤ 100) is prime. E.g. 37 is prime.
+            function Execute() {
+                var text = document.getElementById("tb-number").value;
+                var number = parseInt(text);
+
+                debugger;
+                if (IsPrime(number)) {
+                    jsConsole.writeLine(number + ' is prime.');
+                }
+                else {
+                    jsConsole.writeLine(number + ' is not prime.');
+                }
+            }
+
+            function IsPrime(number) {
+                var maxDividor = Math.sqrt(number);
+                for (var dividor = 2; dividor < maxDividor; dividor++) {
+                    if (number % dividor == 0) {
+                        return false;
+                    }
+                }
+                return true;
+            }
+        </script>
+    </body>
+</html>

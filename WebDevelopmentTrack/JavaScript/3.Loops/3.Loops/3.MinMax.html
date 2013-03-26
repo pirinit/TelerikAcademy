@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>JS Console - Example</title>
+        <link href="styles/js-console.css" rel="stylesheet" />
+
+    </head>
+    <body>
+        <label for="tb-number">Number: </label>
+        <input type="text" id="tb-number" />
+        <br />
+        <a href="#" onclick="Execute()">Max and Min in sequence</a>
+        <div id="console">
+        </div>
+        <script src="scripts/js-console.js">	  
+        </script>
+        <script>
+            // 3. Write a script that finds the max and min number from a sequence of numbers
+            function Execute() {
+                var arr = [5, 7, 10, 111, 76];
+
+                jsConsole.writeLine("Max is " + Max(arr));
+                jsConsole.writeLine("Min is " + Min(arr));
+            }
+
+            function Max(sequence) {
+                var max = sequence[0];
+                for (var element in sequence) {
+                    if (max < sequence[element]) {
+                        max = sequence[element];
+                    }
+                }
+                return max;
+            }
+
+            function Min(sequence) {
+                var min = sequence[0];
+                for (var element in sequence) {
+                    if (min > sequence[element]) {
+                        min = sequence[element];
+                    }
+                }
+                return min;
+            }
+        </script>
+    </body>
+</html>

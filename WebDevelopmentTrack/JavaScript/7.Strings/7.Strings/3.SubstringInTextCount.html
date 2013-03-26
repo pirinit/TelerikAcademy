@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>JS Console - Example</title>
+        <link href="styles/js-console.css" rel="stylesheet" />
+
+    </head>
+    <body>
+        <label for="tb-text">Enter some text</label>
+        <input type="text" id="tb-text" />
+        <br />
+        <label for="tb-search">Enter string to search for</label>
+        <input type="text" id="tb-search" />
+        <br />
+        <a href="#" onclick="Execute()">Count occurrences</a>
+        <div id="console">
+        </div>
+        <script src="scripts/js-console.js">	  
+        </script>
+        <script>
+            /* 3. Write a JavaScript function that finds how many times a substring
+            is contained in a given text (perform case insensitive search).
+            Example: The target substring is "in". The text is as follows:
+
+            We are living in an yellow submarine. We don't have anything else.
+            Inside the submarine is very tight. So we are drinking all the day.
+            We will move out of it in 5 days.
+            
+            The result is: 9.
+            */
+            function Execute() {
+                var text = jsConsole.read("#tb-text");
+                var search = jsConsole.read("#tb-search");
+
+                jsConsole.writeLine("String " + search + " contains " + CountOccurrences(text, search) + " times in the text.");
+            }
+
+            function CountOccurrences(text, search) {
+                text = text.toLowerCase();
+                search = search.toLowerCase();
+                var textObj;
+                if(text instanceof String){
+                    textObj = text;
+                }
+                else{
+                    textObj = new String(text);
+                }
+
+                var count = 0;
+                var index = textObj.indexOf(search, 0);
+                while (index >= 0) {
+                    count++;
+                    index = textObj.indexOf(search, index + 1);
+                }
+
+                return count;
+            }
+        </script>
+    </body>
+</html>

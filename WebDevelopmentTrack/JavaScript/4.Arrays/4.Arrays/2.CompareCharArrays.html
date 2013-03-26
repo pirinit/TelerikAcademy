@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>JS Console - Example</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	
+</head>
+<body>
+	<label for="tb-string1">String 1: </label>
+	<input type="text" id="tb-string1" />
+	<br />
+    <label for="tb-string2">String 2: </label>
+	<input type="text" id="tb-string2" />
+	<br />
+	<a href="#" onclick="Execute()">Compare 2 char arrays (2 strings)</a>
+	<div id="console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+	    /* 2. Write a script that compares two char arrays lexicographically (letter by letter).
+        */
+	    function Execute() {
+	        var string1 = document.getElementById("tb-string1").value;
+	        var string2 = document.getElementById("tb-string2").value;
+	        debugger;
+	        jsConsole.writeLine(string1 + string2);
+            
+	        var firstComparedToSecond = Compare2Strings(string1, string2);
+	        if (firstComparedToSecond == 0) {
+	            jsConsole.writeLine(string1 + " is lexicographicaly equal compared to " + string2);
+	        }
+	        else if (firstComparedToSecond < 0) {
+	            jsConsole.writeLine(string1 + " is lexicographicaly smaller compared to " + string2);
+	        }
+	        else {
+	            jsConsole.writeLine(string1 + " is lexicographicaly greater compared to " + string2);
+	        }
+			
+	    }
+	    function Compare2Strings(string1, string2) {
+	        var longerString = string1.length;
+	        if (string1.length < string2.length) {
+	            longerString = string2.length;
+	        }
+
+	        for (var i = 0; i < longerString; i++) {
+	            var firstLetter = string1[i];
+	            var secondLetter = string2[i];
+	            if (firstLetter == undefined) {
+	                return -1;
+	            }
+	            if (secondLetter == undefined) {
+	                return 1;
+	            }
+	            if (firstLetter == secondLetter) {
+	                continue;
+	            }
+	            else if (firstLetter < secondLetter) {
+	                return -1;
+	            }
+	            else {
+	                return 1;
+	            }
+	        }
+	        return 0;
+	    }
+	</script>
+</body>
+</html>

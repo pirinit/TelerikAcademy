@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>JS Console - Example</title>
+        <link href="styles/js-console.css" rel="stylesheet" />
+
+    </head>
+    <body>
+        <strong>Point </strong>
+        <label for="tb-x">X: </label>
+        <input type="text" id="tb-x" />
+        <label for="tb-y">Y: </label>
+        <input type="text" id="tb-y" />
+        <br />
+        <strong>Circle </strong>
+        <label for="tb-centerx">centerX: </label>
+        <input type="text" id="tb-centerx" />
+        <label for="tb-centery">centerY: </label>
+        <input type="text" id="tb-centery" />
+        <label for="tb-radius">radius: </label>
+        <input type="text" id="tb-radius" />
+        <br />
+        <a href="#" onclick="Execute()">Point in circle?</a>
+        <div id="console">
+        </div>
+        <script src="scripts/js-console.js">	  
+        </script>
+        <script>
+            // 6. Write an expression that checks if given point (x,  y) is within a circle K(O, 5).
+            function Execute() {
+                //point
+                var pXStr = document.getElementById("tb-x").value;
+                var pointX = parseInt(pXStr);
+                var pYStr = document.getElementById("tb-y").value;
+                var pointY = parseInt(pYStr);
+
+                //circle
+                var cXStr = document.getElementById("tb-centerx").value;
+                var circleX = parseInt(cXStr);
+                var cYStr = document.getElementById("tb-centery").value;
+                var circleY = parseInt(cYStr);
+                var cRStr = document.getElementById("tb-radius").value;
+                var circleRadius = parseInt(cRStr);
+
+                // is in circle?
+                var deltaX = pointX - circleX;
+                var deltaY = pointY - circleY;
+                var distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+
+                if (distance <= circleRadius) {
+                    jsConsole.writeLine('The point is within the circle.');
+                }
+                else {
+                    jsConsole.writeLine('The point is outside the circle.');
+                }
+            }
+        </script>
+    </body>
+</html>

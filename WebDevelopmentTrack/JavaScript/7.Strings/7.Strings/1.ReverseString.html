@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>JS Console - Example</title>
+        <link href="styles/js-console.css" rel="stylesheet" />
+
+    </head>
+    <body>
+        <label for="tb-text">Enter string</label>
+        <input type="text" id="tb-text" />
+        <a href="#" onclick="Execute()">ReverseIt!</a>
+        <div id="console">
+        </div>
+        <script src="scripts/js-console.js">	  
+        </script>
+        <script>
+            /* 1. Write a JavaScript function reverses string and returns itExample: "sample"  "elpmas".
+            */
+            function Execute() {
+                var text = jsConsole.read("#tb-text");
+
+                jsConsole.writeLine("Original text is: " + text);
+
+                var reversed = ReverseString(text);
+
+                jsConsole.writeLine("Reversed text is: " + reversed);
+            }
+
+            function ReverseString(text) {
+                var textObj = new String(text);
+                var reversed = new String();
+
+                for (var i = textObj.length-1; i >= 0 ; i--) {
+                    reversed += textObj[i];
+                }
+                return reversed;
+            }
+        </script>
+    </body>
+</html>

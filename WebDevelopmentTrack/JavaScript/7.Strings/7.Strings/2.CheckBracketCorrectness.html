@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>JS Console - Example</title>
+        <link href="styles/js-console.css" rel="stylesheet" />
+
+    </head>
+    <body>
+        <label for="tb-expression">Enter math expression with some brackets</label>
+        <input type="text" id="tb-expression" />
+        <br />
+        <a href="#" onclick="Execute()">Check bracket correctness</a>
+        <div id="console">
+        </div>
+        <script src="scripts/js-console.js">	  
+        </script>
+        <script>
+            /* 2. Write a JavaScript function to check if in a given expression the brackets are put correctly.
+            Example of correct expression: ((a+b)/5-d).
+            Example of incorrect expression: )(a+b)).
+            */
+            function Execute() {
+                var expresion = jsConsole.read("#tb-expression");
+
+                jsConsole.writeLine("Corect brackets configuration: " + AreBracketsCorrect(expresion));
+            }
+
+            function AreBracketsCorrect(expresion) {
+                var bracketsCount = 0;
+                for (var i = 0; i < expresion.length; i++) {
+                    if (expresion[i] == '(') {
+                        bracketsCount++;
+                    }
+                    else if (expresion[i] == ')') {
+                        bracketsCount--;
+                    }
+
+                    if (bracketsCount < 0) {
+                        return false;
+                    }
+                }
+
+                if (bracketsCount == 0) {
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            }
+        </script>
+    </body>
+</html>

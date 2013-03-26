@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>JS Console - Example</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	
+</head>
+<body>
+    <label for="tb-numbers">Enter numbers here, use " " (space) for delimiter: </label>
+    <br />
+	<input type="text" id="tb-numbers" />
+	<br />
+	<a href="#" onclick="Execute()">Find the index of the first element bigger than its neighbors</a>
+	<div id="console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+	    /* 7. Write a Function that returns the index of the first element in array that is
+        bigger than its neighbors, or -1, if there’s no such element. Use the function from the previous exercise.
+        */
+	    function Execute() {
+	        var string = document.getElementById("tb-numbers").value;
+	        var numbersStr = string.split(" ");
+	        var numbers = new Array();
+
+	        for (var i = 0; i < numbersStr.length; i++) {
+	            if (numbersStr[i] != "") {
+	                numbers.push(parseInt(numbersStr[i]));
+	            }
+	        }
+
+
+	        //numbers = new Array(5, 5, 5, 6, 7, 8, 999, 8, 7, 6, 555);
+
+	        var index = FirstElementBiggerThanNeighbors(numbers);
+	        if (index >= 0) {
+	            jsConsole.writeLine("The index of the first element, bigger than its neighbors is " + index + ".");
+	        }
+	        else {
+	            jsConsole.writeLine("There is no element that is bigger than its neighbors.");
+	        }
+	    }
+
+	    function FirstElementBiggerThanNeighbors(array) {
+	        for (var i = 1; i < array.length-2; i++) {
+	            if (BiggerThanNeighbors(array, i)) {
+	                return i;
+	            }
+	        }
+	        return -1;
+	    }
+
+	    function BiggerThanNeighbors(array, index) {
+	        if (0 < index && index < array.length - 2) {
+	            return array[index - 1] < array[index] && array[index + 1] < array[index];
+	        }
+	        else {
+	            return false;
+	        }
+	    }
+	    
+	</script>
+</body>
+</html>

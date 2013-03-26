@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>JS Console - Example</title>
+        <link href="styles/js-console.css" rel="stylesheet" />
+
+    </head>
+    <body>
+        <strong>Point </strong>
+        <label for="tb-x">X: </label>
+        <input type="text" id="tb-x" />
+        <label for="tb-y">Y: </label>
+        <input type="text" id="tb-y" />
+        <br />
+        <strong>Circle </strong>
+        <label for="tb-centerx">centerX: </label>
+        <input type="text" id="tb-centerx" />
+        <label for="tb-centery">centerY: </label>
+        <input type="text" id="tb-centery" />
+        <label for="tb-radius">radius: </label>
+        <input type="text" id="tb-radius" />
+        <br />
+        <strong>Rectangle</strong>
+        <label for="tb-top">top: </label>
+        <input type="text" id="tb-top" />
+        <label for="tb-left">left: </label>
+        <input type="text" id="tb-left" />
+        <label for="tb-width">width: </label>
+        <input type="text" id="tb-width" />
+        <label for="tb-height">height: </label>
+        <input type="text" id="tb-height" />
+        <br />
+        <a href="#" onclick="Execute()">Point position</a>
+        <div id="console">
+        </div>
+        <script src="scripts/js-console.js">	  
+        </script>
+        <script>
+            /* 9. Write an expression that checks for given point (x, y) if it is within
+            the circle K( (1,1), 3) and out of the rectangle R(top=1, left=-1, width=6, height=2).
+            */
+            function Execute() {
+                //point
+                var pXStr = document.getElementById("tb-x").value;
+                var pointX = parseFloat(pXStr);
+                var pYStr = document.getElementById("tb-y").value;
+                var pointY = parseFloat(pYStr);
+
+                //circle
+                var cXStr = document.getElementById("tb-centerx").value;
+                var circleX = parseFloat(cXStr);
+                var cYStr = document.getElementById("tb-centery").value;
+                var circleY = parseFloat(cYStr);
+                var cRStr = document.getElementById("tb-radius").value;
+                var circleRadius = parseFloat(cRStr);
+
+                //rectangle
+                var topStr = document.getElementById("tb-left").value;
+                var top = parseFloat(topStr);
+                var leftStr = document.getElementById("tb-left").value;
+                var left = parseFloat(leftStr);
+                var widthStr = document.getElementById("tb-width").value;
+                var width = parseFloat(widthStr);
+                var heigtStr = document.getElementById("tb-height").value;
+                var height = parseFloat(heigtStr);
+
+                if (IsPointInCircle(pointX, pointY, circleX, circleY, circleRadius)
+                    && !IsPointInRectangle(pointX, pointY, top, left, width, left)) {
+                    jsConsole.writeLine('The point is simultaneously within the circle and outside the rectangle');
+                }
+                else {
+                    jsConsole.writeLine('The point is NOT simultaneously within the circle and outside the rectangle');
+                }
+            }
+            
+            function IsPointInCircle(pointX, pointY, circleX, circleY, circleRadius) {
+                var deltaX = pointX - circleX;
+                var deltaY = pointY - circleY;
+                var distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+            
+                if (distance <= circleRadius) {
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            }
+            
+            function IsPointInRectangle(pointX, pointY, top, left, width, height) {
+                var bottom = top - height;
+                var right = left + width;
+                if (left <= pointX && pointX <= right
+                    && bottom <= pointY && pointY <= top) {
+                    return true;
+                }
+                return false;
+            }
+        </script>
+    </body>
+</html>

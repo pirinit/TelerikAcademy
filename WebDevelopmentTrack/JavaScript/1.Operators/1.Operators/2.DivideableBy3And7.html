@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>JS Console - Example</title>
+        <link href="styles/js-console.css" rel="stylesheet" />
+
+    </head>
+    <body>
+        <label for="tb-number">Number: </label>
+        <input type="text" id="tb-number" />
+        <br />
+        <a href="#" onclick="Execute()">Divideable by 3 and 7</a>
+        <div id="console">
+        </div>
+        <script src="scripts/js-console.js">	  
+        </script>
+        <script>
+            // 2. Write a boolean expression that checks for given integer
+            //    if it can be divided (without remainder) by 7 and 5 in the same time.
+            function Execute() {
+                var n = jsConsole.readFloat("#tb-number");
+
+                if ((n % 3 == 0) && (n % 7 == 0)) {
+                    jsConsole.writeLine(n + ' is divideable by 3 and 7.');
+                }
+                else {
+                    jsConsole.writeLine(n + ' is not divideable by 3 and 7.');
+                }
+			    
+                checkThirdDigitOfNumber(788);
+                
+            }
+            function checkThirdDigitOfNumber(input) {
+                var number = parseInt((input / 100) % 10);
+                if (number == 7) {
+                    jsConsole.writeLine(true);
+                }
+                else {
+                    jsConsole.writeLine(false);
+                }
+            }
+        </script>
+    </body>
+</html>

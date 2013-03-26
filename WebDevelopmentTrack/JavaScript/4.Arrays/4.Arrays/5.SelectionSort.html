@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>JS Console - Example</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	
+</head>
+<body>
+	<label for="tb-string1">Enter numbers here, use " " (space) for delimiter: </label>
+    <br />
+	<input type="text" id="tb-string1" />
+	<br />
+	<a href="#" onclick="Execute()">Sort array using selection sort</a>
+	<div id="console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+	    /* 5. Sorting an array means to arrange its elements in increasing order. 
+        Write a script to sort an array. Use the "selection sort" algorithm:
+        Find the smallest element, move it at the first position, find the smallest
+        from the rest, move it at the second position, etc.Hint: Use a second array
+        */
+	    function Execute() {
+	        var string = document.getElementById("tb-string1").value;
+	        var numbersStr = string.split(" ");
+	        var numbers = new Array();
+
+
+	        for (var i = 0; i < numbersStr.length; i++) {
+	            if (numbersStr[i] != "") {
+	                numbers.push(parseInt(numbersStr[i]));
+	            }
+	        }
+
+	        debugger;
+
+	        numbers = SelectionSort(numbers, 0);
+
+	        jsConsole.writeLine("The array sorted with SelectionSort Algorythm:");
+	        for (var i = 0; i < numbers.length; i++) {
+	            jsConsole.writeLine(numbers[i] + ", ");
+	        }
+	    }
+	    function SelectionSort(array, start) {
+	        if (start == array.length-1) {
+	            return array;
+	        }
+	        var smallestElementIndex = start;
+            //finding the index of the smallest element in the range start - end of array
+	        for (var i = start; i < array.length; i++) {
+	            if (array[smallestElementIndex] > array[i]) {
+	                smallestElementIndex = i;
+	            }
+	        }
+            //putting the smallest element at strat position
+	        var temp = array[smallestElementIndex];
+	        array[smallestElementIndex] = array[start];
+	        array[start] = temp;
+            //recurssivly calling SelectionSort for the rest of the array (start+1 - end of array)
+	        return SelectionSort(array, start + 1);
+	    }
+	</script>
+</body>
+</html>

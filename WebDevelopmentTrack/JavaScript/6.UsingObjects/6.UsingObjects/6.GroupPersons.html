@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>JS Console - Example</title>
+        <link href="styles/js-console.css" rel="stylesheet" />
+
+    </head>
+    <body>
+        <a href="#" onclick="Execute()">Find the youngest person</a>
+        <div id="console">
+        </div>
+        <script src="scripts/js-console.js">	  
+        </script>
+        <script>
+            /* 6. Write a function that groups an array of persons by age, first or last name.
+            The function must return an associative array, with keys - the groups,
+            and values -arrays with persons in this groups
+            Use function overloading (i.e. just one function)
+
+            var persons = {…};
+            var groupedByFname = group(persons,"firstname");
+            var groupedByAge= group(persons,"age");
+            */
+            function Execute() {
+                var persons = [
+                    {firstname : "Bay", lastname: "Petrov", age: 3}, 
+                    { firstname: "Bay", lastname: "Ivan", age: 91 },
+                    { firstname: "Bay", lastname: "Petran", age: 3 },
+                    { firstname: "Bay", lastname: "Stoyan", age: 34 },
+                    { firstname: "Bay", lastname: "Mangal", age: 23 },
+                    { firstname: "Bay", lastname: "Mangal", age: 3 },
+                    { firstname: "Gosho", lastname: "Ivanov", age: 32 },
+                    { firstname: "Ivan", lastname: "Ivanov", age: 91 },
+                    { firstname: "Petkan", lastname: "Ivanov", age: 45 },
+                    { firstname: "Stoyan", lastname: "Ivanov", age: 34 },
+                    { firstname: "Hristo", lastname: "Ivanov", age: 91 },
+                    { firstname: "Unufri", lastname: "Ivanov", age: 3 }, ];
+
+                //ordered by age
+                jsConsole.writeLine("-----ordered by age-----");
+                var personsByAge = SortByProperty(persons, "age");
+                PrintGroupedPersons(personsByAge);
+
+                //ordered by firstname
+                jsConsole.writeLine("----ordered by firstname-----");
+                var personsByFirstName = SortByProperty(persons, "firstname");
+                PrintGroupedPersons(personsByFirstName);
+
+                //ordered by lastname
+                jsConsole.writeLine("-----ordered by lastname-----");
+                var personsByLastName = SortByProperty(persons, "lastname");
+                PrintGroupedPersons(personsByLastName);
+            }
+
+            function PrintGroupedPersons(arr) {
+                for (var group in arr) {
+                    jsConsole.writeLine("Group " + group);
+                    for (var person in arr[group]) {
+                        var currentPerson = arr[group][person];
+                        jsConsole.writeLine(" . " + currentPerson.firstname + " " + currentPerson.lastname + ", age " + currentPerson.age + ".");
+                    }
+                }
+            }
+            function SortByProperty(arr, sortByProperty) {
+                debugger;
+                var result = {}
+                for (var personIndex in arr) {
+                    var currentPerson = arr[personIndex];
+                    if (result[currentPerson[sortByProperty]] != null) {
+                        //i'm returning a deep copy of the initial array, so if in any moment later
+                        //there is a change it won't affect the sorted array.
+                        //if we don't want to copy the entire array just push "currentPerson", not it's copy
+                        result[currentPerson[sortByProperty]].push(DeepCopy(currentPerson));
+                    }
+                    else {
+                        result[currentPerson[sortByProperty]] = new Array;
+                        result[currentPerson[sortByProperty]].push(DeepCopy(currentPerson));
+                    }
+                }
+
+                return result;
+            }
+
+            function DeepCopy(obj) {
+                if (obj instanceof Array) {
+                    var copy = new Array;
+                    for (var element in obj) {
+                        copy[element] = DeepCopy(obj[element]);
+                    }
+                    return copy;
+                }
+                else if (obj instanceof Object) {
+                    var copy = {};
+                    for (var element in obj) {
+                        copy[element] = DeepCopy(obj[element]);
+                    }
+                    return copy;
+                }
+                else {
+                    return obj;
+                }
+            }
+        </script>
+    </body>
+</html>
+    

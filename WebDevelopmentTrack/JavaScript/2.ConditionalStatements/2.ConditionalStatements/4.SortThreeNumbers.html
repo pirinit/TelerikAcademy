@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>JS Console - Example</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	
+</head>
+<body>
+	<label for="tb-first">First number: </label>
+	<input type="text" id="tb-first" />
+	<br />
+    <label for="tb-second">Second number: </label>
+	<input type="text" id="tb-second" />
+	<br />
+    <label for="tb-third">Third number: </label>
+	<input type="text" id="tb-third" />
+	<br />
+	<a href="#" onclick="Execute()">Sort Three Numbers</a>
+	<div id="console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+	    //4. Sort 3 real values in descending order using nested if statements.
+		function Execute() {
+		    var first = jsConsole.readFloat("#tb-first");
+		    var second = jsConsole.readFloat("#tb-second");
+		    var third = jsConsole.readFloat("#tb-third");
+
+		    var biggest;
+		    var middle;
+		    var smallest;
+
+		    if (first > second)
+		    {
+		        if (first > third)
+		        {
+		            biggest = first;
+		            if (second > third)
+		            {
+		                middle = second;
+		                smallest = third;
+		            }
+		            else
+		            {
+		                middle = third;
+		                smallest = second;
+		            }
+		        }
+		        else
+		        {
+		            biggest = third;
+		            if (first > second)
+		            {
+		                middle = first;
+		                smallest = second;
+		            }
+		            else
+		            {
+		                middle = second;
+		                smallest = first;
+		            }
+		        }
+		    }
+		    else
+		    {
+		        if (second > third)
+		        {
+		            biggest = second;
+		            if (first > third)
+		            {
+		                middle = first;
+		                smallest = third;
+		            }
+		            else
+		            {
+		                middle = third;
+		                smallest = first;
+		            }
+		        }
+		        else
+		        {
+		            biggest = third;
+		            if (first > second)
+		            {
+		                middle = first;
+		                smallest = second;
+		            }
+		            else
+		            {
+		                middle = second;
+		                smallest = first;
+		            }
+		        }
+		    }
+
+		    jsConsole.writeLine("Sorted in descending order:  " + biggest + ", " + middle + " and " + smallest + ".");
+		}
+	</script>
+</body>
+</html>

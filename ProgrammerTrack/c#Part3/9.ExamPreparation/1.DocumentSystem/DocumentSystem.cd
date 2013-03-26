@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="AudioDocument" Collapsed="true">
+    <Position X="5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAQAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>AudioDocument.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BinaryDocument" Collapsed="true">
+    <Position X="7.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAIAAAAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>BinaryDocument.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Document" Collapsed="true">
+    <Position X="6.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAgAAgAAEAAAAAAQAAAAEAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>Document.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DocumentSystem" Collapsed="true">
+    <Position X="14.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIACAAAAAAAAAIAAAAAAhAAAAAoAAAgAAAAgBkAEBIA=</HashCode>
+      <FileName>DocumentSystem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ExcelDocument" Collapsed="true">
+    <Position X="8.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAIAAAACAAgEAQAABAAIAAAACAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>ExcelDocument.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MultimediaDocument" Collapsed="true">
+    <Position X="5.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAEAAAABAAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>MultiMediaDocument.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OfficeDocument" Collapsed="true">
+    <Position X="9.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAACAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>OfficeDocument.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PDFDocument" Collapsed="true">
+    <Position X="7.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PDFDocument.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TextDocument" Collapsed="true">
+    <Position X="5.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAgAAAAAQAAAAAAAAAAAAAAAAgAEAAAAA=</HashCode>
+      <FileName>TextDocument.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="VideoDocument" Collapsed="true">
+    <Position X="6.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAIAAAACAAAEAAAAA=</HashCode>
+      <FileName>VideoDocument.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WordDocument" Collapsed="true">
+    <Position X="10.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAIAAAQCAAgEAQAAAAAAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>WordDocument.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="IEncryptable" Collapsed="true">
+    <Position X="10.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAACAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IEncryptable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="IEditable" Collapsed="true">
+    <Position X="12.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>IEditable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="IDocument" Collapsed="true">
+    <Position X="10.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAgAAEAAAAAAQAAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>IDocument.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

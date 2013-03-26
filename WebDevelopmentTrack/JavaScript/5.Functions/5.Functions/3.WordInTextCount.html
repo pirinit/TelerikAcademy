@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>JS Console - Example</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	
+</head>
+<body>
+	<label for="tb-text">Text: </label>
+	<input type="text" id="tb-text" />
+	<br />
+    <label for="tb-word">Word: </label>
+	<input type="text" id="tb-word" />
+	<br />
+    <label for="cb-case-sensitive">Case sesnsitive: </label>
+	<input type="checkbox" id="cb-case-sensitive" />
+	<br />
+	<a href="#" onclick="Execute()">Find the number of word occurrences in the text</a>
+	<div id="console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+	    /* 3. Write a function that finds all the occurrences of word in a text.
+        The search can case sensitive or case insensitive.
+        Use function overloading
+        */
+	    function Execute() {
+	        var text = jsConsole.read("#tb-text");
+	        var word = jsConsole.read("#tb-word");
+	        var caseSensitive = document.getElementById("cb-case-sensitive").checked;
+
+	        var count = WordCount(text, word);
+	        jsConsole.writeLine("Count is " + count + ". - CaseInsensitive");
+	        var count = WordCount(text, word,caseSensitive);
+	        jsConsole.writeLine("Count is " + count + ". - CaseSensitive");
+	    }
+	    function WordCount(text, word, isCaseSensitive) {
+	        isCaseSensitive = isCaseSensitive || false; //default value is false
+
+	        if (!isCaseSensitive) {
+	            text = text.toLowerCase();
+	            word = word.toLowerCase();
+	        }
+
+	        var count = 0;
+	        var index = -1;
+
+	        while (index < text.length) {
+	            index = text.indexOf(word, index+1);
+	            if (index >= 0) {
+	                count++;
+	            }
+	            else {
+	                break;
+	            }
+	        }
+	        return count;
+	    }
+	</script>
+</body>
+</html>

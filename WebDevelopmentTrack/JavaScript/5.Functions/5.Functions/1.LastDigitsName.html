@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>JS Console - Example</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	
+</head>
+<body>
+	<label for="tb-number">Number: </label>
+	<input type="text" id="tb-number" />
+	<br />
+	<a href="#" onclick="Execute()">Last digit's name</a>
+	<div id="console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+	    /* 1. Write a function that returns the last digit of given integer as an English word. Examples: 512  "two", 1024  "four", 12309  "nine"
+        */
+	    function Execute() {
+	        var number = jsConsole.readInteger("#tb-number");
+	        var lastDigitName = LastDigitsName(number);
+	        jsConsole.writeLine("The last digit is " + lastDigitName + ".");
+	    }
+	    function LastDigitsName(number) {
+	        var digit = number % 10;
+	        var name;
+	        switch (digit) {
+	            case 0:
+	                name = "zero";
+	                break;
+	            case 1:
+	                name = "one";
+	                break;
+	            case 2:
+	                name = "two";
+	                break;
+	            case 3:
+	                name = "three";
+	                break;
+	            case 4:
+	                name = "four";
+	                break;
+	            case 5:
+	                name = "five";
+	                break;
+	            case 6:
+	                name = "six";
+	                break;
+	            case 7:
+	                name = "seven";
+	                break;
+	            case 8:
+	                name = "eight";
+	                break;
+	            case 9:
+	                name = "nine";
+	                break;
+	        }
+
+	        return name;
+	    }
+	</script>
+</body>
+</html>

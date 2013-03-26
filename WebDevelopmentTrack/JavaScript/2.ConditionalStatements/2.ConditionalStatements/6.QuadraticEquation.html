@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>JS Console - Example</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	
+</head>
+<body>
+    <strong>Enter the coefficents:</strong>
+	<input type="text" id="tb-a" />
+    <label for="tb-a">X<span>2</span> + </label>
+    <input type="text" id="tb-b" />
+    <label for="tb-b"> X + </label>
+    <input type="text" id="tb-c" />
+    <label for="tb-c"> = 0</label>
+	<br />
+	<a href="#" onclick="Execute()">Calc roots</a>
+	<div id="console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+	    //6. Write a script that enters the coefficients a, b and c of a quadratic equation
+	    //a*x2 + b*x + c = 0
+	    //and calculates and prints its real roots. Note that quadratic equations may have 0, 1 or 2 real roots.
+
+		function Execute() {
+		    var a = jsConsole.readFloat("#tb-a");
+		    var b = jsConsole.readFloat("#tb-b");
+		    var c = jsConsole.readFloat("#tb-c");
+
+		    var d = b * b - 4 * a * c;
+		    jsConsole.writeLine(d);
+		    if (d < 0)
+		    {
+		        jsConsole.writeLine("The quadratic equation has no real roots.");
+		    }
+		    else
+		    {
+		        if (d == 0)
+		        {
+		            var root = -b / (2 * a);
+		            jsConsole.writeLine("The quadratic equation has only one real root: " + root);
+		        }
+		        else
+		        {
+		            var dSqrt = Math.sqrt(d);
+		            var root1 = (-b - dSqrt) / (2 * a);
+		            var root2 = (-b + dSqrt) / (2 * a);
+		            jsConsole.writeLine("The quadratic equation has two real roots: " + root1 + " and " + root2);
+		        }
+		    }
+		}
+	</script>
+</body>
+</html>
