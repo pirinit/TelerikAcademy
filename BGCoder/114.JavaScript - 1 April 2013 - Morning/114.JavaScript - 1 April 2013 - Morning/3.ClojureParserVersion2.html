@@ -1,0 +1,208 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>JS Console - Example</title>
+        <link href="styles/js-console.css" rel="stylesheet" />
+
+    </head>
+    <body>
+        <label for="tb-text">Enter string</label>
+        <input type="text" id="tb-text" />
+        <a href="#" onclick="Execute()">ReverseIt!</a>
+        <div id="console">
+        </div>
+        <script src="scripts/js-console.js">	  
+        </script>w
+        <script>
+            /* 1. Write a JavaScript function reverses string and returns itExample: "sample"  "elpmas".
+            */
+
+            function Execute() {
+                var args = [];
+                // args[0] = '(   -  func1    8    9     -4     8 9)';
+                // args[0] = '(/ func1 0 3)';
+                //args[0] = '(  def func10 ( -  func1    8    9     -4     8 9)   )';
+            
+                //args[0] = '(def func 10)';
+                //args[1] = '(def newFunc (+ func 2))';
+                //args[2] = '(def sumFunc (+ func  func newFunc 0 0 0))';
+                //args[3] = '(* sumFunc 2)';
+            
+                //args[0] = '(def func (+ 5 2))';
+                //args[1] = '(def func2 (/ func 5 2 1 0))';
+                //args[2] = '(def func3 (/ func 2))';
+                //args[3] = '(+ func3 func)';
+            
+                ////result 12
+                //args[0] = '(def func (+ 5 2))';
+                //args[1] = '(def func2 77)';
+                //args[2] = '(def func3 (/ func2 func))';
+                //args[3] = '(+ func3 1)';
+            
+                //result 12
+                //args[0] = '(def func 150)';
+
+                args[0] = '(def     go6o    (/ -7 1 1 1 1) )';
+                args[1] = '(def asd (/ 0 5))';
+                args[2] = '(def func2 asd  )';
+                args[3] = '(           +        4          2      func2)';
+                var result = Solve(args);
+                jsConsole.writeLine(result);
+            }
+            
+            var funcs = {}
+            
+            function Solve(args) {
+                var argsLength = args.length;
+            
+                var result = 0;
+                for (var i = 0; i < argsLength; i++) {
+                    args[i] = args[i].replace(/\)/g, ' ');
+                    args[i] = args[i].replace(/\(/g, ' ');
+                    var tempCommand = args[i].split(' ');
+                    var command = [];
+                    for (var j = 0; j < tempCommand.length; j++) {
+                        if (tempCommand[j] != '') {
+                            command.push(tempCommand[j]);
+                        }
+                    }
+            
+                    result = evaluateCommand(command, 0);
+            
+                    if (result[0] == 'D') {
+                        return result + (i + 1);
+                    }
+                }
+            
+                return result;
+            }
+            
+            function evaluateCommand(commandArgs, operationIndex) {
+                debugger;
+                var result = 0;
+                switch (commandArgs[operationIndex]) {
+                    case '+':
+                        result = add(commandArgs, operationIndex);
+                        break;
+                    case '-':
+                        result = substract(commandArgs, operationIndex);
+                        break;
+                    case '*':
+                        result = multiply(commandArgs, operationIndex);
+                        break;
+                    case '/':
+                        result = divide(commandArgs, operationIndex);
+                        break;
+                    case 'def':
+                        result = evaluateDeff(commandArgs, operationIndex + 1);
+                        break;
+                    default:
+                        var temp = parseInt(commandArgs[operationIndex]);
+                        if (isNaN(temp)) {
+                            temp = funcs[commandArgs[operationIndex]];
+                        }
+                        return temp;
+                        break;
+                }
+            
+                return result;
+            }
+            
+            function add(commands, operationIndex) {
+                var start = operationIndex + 1;
+                var tempNumber = parseInt(commands[start]);
+
+                if (isNaN(tempNumber)) {
+                    tempNumber = funcs[commands[start]];
+                }
+
+                var result = tempNumber;
+                var length = commands.length;
+                for (var i = start + 1; i < length; i++) {
+                    var tempNumber = parseInt(commands[i]);
+            
+                    if (isNaN(tempNumber)) {
+                        tempNumber = funcs[commands[i]];
+                    }
+                    result += tempNumber;
+                }
+                return result;
+            }
+            
+            function substract(commands, operationIndex) {
+                var start = operationIndex + 1;
+                var tempNumber = parseInt(commands[start]);
+
+                if (isNaN(tempNumber)) {
+                    tempNumber = funcs[commands[start]];
+                }
+
+                var result = tempNumber;
+                var length = commands.length;
+                for (var i = start + 1; i < length; i++) {
+                    var tempNumber = parseInt(commands[i]);
+            
+                    if (isNaN(tempNumber)) {
+                        tempNumber = funcs[commands[i]];
+                    }
+                    result -= tempNumber;
+                }
+                return result;
+            }
+            
+            function multiply(commands, operationIndex) {
+                var start = operationIndex + 1;
+                var tempNumber = parseInt(commands[start]);
+
+                if (isNaN(tempNumber)) {
+                    tempNumber = funcs[commands[start]];
+                }
+
+                var result = tempNumber;
+                var length = commands.length;
+                for (var i = start + 1; i < length; i++) {
+                    var tempNumber = parseInt(commands[i]);
+            
+                    if (isNaN(tempNumber)) {
+                        tempNumber = funcs[commands[i]];
+                    }
+                    result *= tempNumber;
+                }
+                return result;
+            }
+            
+            function divide(commands, operationIndex) {
+                var start = operationIndex + 1;
+                var tempNumber = parseInt(commands[start]);
+
+                if (isNaN(tempNumber)) {
+                    tempNumber = funcs[commands[start]];
+                }
+
+                var result = tempNumber;
+                var length = commands.length;
+                for (var i = start + 1; i < length; i++) {
+                    var tempNumber = parseInt(commands[i]);
+            
+                    if (isNaN(tempNumber)) {
+                        tempNumber = funcs[commands[i]];
+                    }
+
+                    if (tempNumber == 0) {
+                        return 'Division by zero! At Line:'
+                    }
+                    result = Math.floor(result / tempNumber);
+                }
+                return result;
+            }
+            
+            function evaluateDeff(commands, operationIndex) {
+                var funcName = commands[operationIndex];
+                funcs[funcName] = evaluateCommand(commands, operationIndex + 1);
+
+                return funcs[funcName];
+            }
+        </script>
+    </body>
+</html>
+            

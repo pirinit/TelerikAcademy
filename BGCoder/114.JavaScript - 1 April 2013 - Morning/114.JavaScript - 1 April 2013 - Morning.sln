@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "114.JavaScript - 1 April 2013 - Morning", "114.JavaScript - 1 April 2013 - Morning\114.JavaScript - 1 April 2013 - Morning.csproj", "{B64FBD4F-8906-4930-BE7B-F8A2AA3F871D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B64FBD4F-8906-4930-BE7B-F8A2AA3F871D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B64FBD4F-8906-4930-BE7B-F8A2AA3F871D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B64FBD4F-8906-4930-BE7B-F8A2AA3F871D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B64FBD4F-8906-4930-BE7B-F8A2AA3F871D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>JS Console - Example</title>
+        <link href="styles/js-console.css" rel="stylesheet" />
+
+    </head>
+    <body>
+        <label for="tb-text">Enter string</label>
+        <input type="text" id="tb-text" />
+        <a href="#" onclick="Execute()">ReverseIt!</a>
+        <div id="console">
+        </div>
+        <script src="scripts/js-console.js">	  
+        </script>w
+        <script>
+            /* 1. Write a JavaScript function reverses string and returns itExample: "sample"  "elpmas".
+            */
+
+            function Execute() {
+                var args = ['6 7 3', '0 0', '2 2', '-2 2', '3 -1'];
+            
+                var result = Solve(args);
+                jsConsole.writeLine(result);
+            }
+            
+            function Solve(args) {
+                
+                var inputs = args[0].split(' ');
+                var rows = parseInt(inputs[0]);
+                var cols = parseInt(inputs[1]);
+                var jumpCount = parseInt(inputs[2]);
+
+                var visited = [];
+                var field = []
+
+                var tempIndex = 1;
+
+                for (var row = 0; row < rows; row++) {
+                    visited[row] = [];
+                    field[row] = [];
+                    for (var col = 0; col < cols; col++) {
+                        visited[row][col] = false;
+                        field[row][col] = tempIndex;
+                        tempIndex++;
+                    }
+                }
+
+
+                inputs = args[1].split(' ');
+                var currentRow = parseInt(inputs[0]);
+                var currentCol = parseInt(inputs[1]);
+
+                var jumps = [];
+
+                for (var j = 0; j < jumpCount; j++) {
+                    inputs = args[j + 2].split(' ');
+                    var jump = { deltaRow: parseInt(inputs[0]), deltaCol: parseInt(inputs[1]) };
+                    jumps.push(jump);
+                }
+
+                debugger;
+                var jumpValue = 0;
+                var jumpIndex = 0;
+                while (0 <= currentRow && currentRow < rows
+                    && 0 <= currentCol && currentCol < cols) {
+
+                    if (visited[currentRow][currentCol]) {
+                        return 'caught ' + count;
+                    }
+                    visited[currentRow][currentCol] = true;
+                    jumpValue += field[currentRow][col];
+                    currentRow += jumps[jumpIndex].deltaRow;
+                    currentCol += jumps[jumpIndex].deltaCol;
+                    jumpIndex++;
+                    if (jumpIndex == jumpCount) {
+                        jumpIndex = 0;
+                    }
+                }
+
+                return 'escaped ' + jumpValue;
+            }
+        </script>
+    </body>
+</html>
+            
