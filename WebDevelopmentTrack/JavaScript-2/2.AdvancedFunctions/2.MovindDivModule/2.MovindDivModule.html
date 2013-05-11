@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Moving div module</title>
+        <script>
+            var movingShapes = (function () {
+                var divWidth = 30;
+                var divHeigth = 30;
+                var circleCenter = new Point(200, 200);
+                var cirlcleRadius = 100;
+                var rectTopLeft = new Point(400, 200);
+                var rectWidth = 100;
+                var rectHeight = 150;
+                var updateInterval = 5;
+
+                function add(moveType) {
+                    switch (moveType) {
+                        case 'ellipse':
+                            addDivInCircle('display');
+                            break;
+                        case 'rect':
+                            addDivInRectangle('display');
+                            break;
+                    }
+                }
+
+                function addDivInRectangle(parentElementId) {
+                    var div = createRandomDiv();
+                    div.direction = 0;
+                    div.coordinates = new Point(rectTopLeft.x, rectTopLeft.y);
+                    var parent = document.getElementById(parentElementId);
+                    parent.appendChild(div);
+                    var minWidth = rectTopLeft.x;
+                    var maxWidth = minWidth + rectWidth;
+                    var minHeight = rectTopLeft.y;
+                    var maxHeight = minHeight + rectHeight;
+
+                    setiIntervalId = setInterval(function () {
+                        updateRectDivCoordinates(div, minWidth, maxWidth, minHeight, maxHeight);
+                        div.style.top = div.coordinates.y + 'px';
+                        div.style.left = div.coordinates.x + 'px';
+                    }, updateInterval);
+                }
+                
+                function updateRectDivCoordinates(divElement, minWidth, maxWidth, minHeight, maxHeight) {
+                    switch (divElement.direction) {
+                        case 0:
+                            divElement.coordinates.x++;
+                            if (divElement.coordinates.x >= maxWidth) {
+                                divElement.direction = 1;
+                            }
+                            break;
+                        case 1:
+                            divElement.coordinates.y++;
+                            if (divElement.coordinates.y >= maxHeight) {
+                                divElement.direction = 2;
+                            }
+                            break;
+                        case 2:
+                            divElement.coordinates.x--;
+                            if (divElement.coordinates.x <= minWidth) {
+                                divElement.direction = 3;
+                            }
+                            break;
+                        case 3:
+                            divElement.coordinates.y--;
+                            if (divElement.coordinates.y <= minHeight) {
+                                divElement.direction = 0;
+                            }
+                            break;
+                    }
+                }
+
+                function addDivInCircle(parentElementId) {
+                    var div = createRandomDiv();
+                    div.angle = 1;
+                    div.updateAngle = function () {
+                        this.angle++;
+                        if (this.angle > 360) {
+                            this.angle = 1;
+                        }
+                    }
+                    var parent = document.getElementById(parentElementId);
+                    parent.appendChild(div);
+
+                    setiIntervalId = setInterval(function () {
+                        var coordinates = getCircleDivCoordinates(div.angle, cirlcleRadius, circleCenter);
+                        div.updateAngle();
+                        div.style.left = coordinates.x + 'px';
+                        div.style.top = coordinates.y + 'px';
+                    }, updateInterval);
+                }
+
+                function getCircleDivCoordinates(angleInGrad, distanceToCenter, center) {
+                    var x = Math.floor(center.x + distanceToCenter * Math.cos(toRadians(angleInGrad)));
+                    var y = Math.floor(center.y + distanceToCenter * Math.sin(toRadians(angleInGrad)));
+
+                    return new Point(x, y);
+                }
+
+                function toRadians(angle) {
+                    return angle * (Math.PI / 180);
+                }
+
+                function Point(x, y) {
+                    var point = { x: x, y: y };
+                    return point;
+                }
+            
+                function createRandomDiv() {
+                    var div = document.createElement('div');
+                    var backgroundColor = generateRandomColor();
+                    var fontColor = generateRandomColor();
+                    var borderColor = generateRandomColor();
+                    var borderWidth = 1;
+            
+                    div.style.width = divWidth + 'px';
+                    div.style.height = divHeigth + 'px';
+                    div.style.backgroundColor = backgroundColor;
+                    div.style.color = fontColor;
+                    div.style.position = 'absolute';
+                    div.style.textAlign = 'center';
+                    div.style.border = 'solid';
+                    div.style.borderWidth = borderWidth;
+                    div.style.borderColor = borderColor;
+                    return div;
+                }
+            
+                function generateRandomColor() {
+                    var letters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'];
+                    var color = '#';
+                    for (var i = 0; i < 6; i++) {
+                        color += letters[Math.round(Math.random() * 15)];
+                    }
+                    return color;
+                }
+            
+                function generateRandomNumberInRange(minSize, maxSize) {
+                    var number = Math.floor(Math.random() * (maxSize - minSize + 1) + minSize);
+                    return number;
+                }
+            
+                return {
+                    add : add
+                };
+            })();
+            
+            function clearAll(parentElementId) {
+                var parentElement = document.getElementById(parentElementId);
+                parentElement.innerHTML = '';
+            }
+        </script>
+    </head>
+    <body>
+        <button id="AddDivInCircle" onclick="movingShapes.add('ellipse');">Add Div in Circle</button>
+        <button id="AddDivInRectangle" onclick="movingShapes.add('rect');">Add Div in Rectangle</button>
+        <button id="ClearAll" onclick="clearAll('display');">Clear All</button>
+        <div id="display" style="position: relative;"></div>
+    </body>
+</html>
+    

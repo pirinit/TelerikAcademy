@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Query Selector Shim</title>
+    <script src="js/jquery-sizzle-b8789b8/sizzle.js"></script>
+</head>
+<body>
+    <div class="first"></div>
+    <div class="first"></div>
+    <div class="third"></div>
+    <div class="red"></div>
+    <div class="junk">
+        <div class="innerJunk">
+            <span>some text in span</span>
+        </div>
+    </div>
+    <script>
+        // 3. Write a script that shims querySelector and querySelectorAll in older browsers
+        if (document.querySelectorAll === undefined) {
+            document.querySelectorAll = function (selector) {
+                var elements = Sizzle(selector);
+                return elements;
+            }
+        }
+        if (document.querySelector === undefined) {
+            document.querySelector = function (selector) {
+                var element = Sizzle(selector)[0];
+                return element;
+            }
+        }
+    </script>
+</body>
+</html>

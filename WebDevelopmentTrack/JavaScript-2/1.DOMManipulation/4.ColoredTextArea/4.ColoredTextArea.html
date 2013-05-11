@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Colored Text Area</title>   
+</head>
+<body onload="setEvents();">
+    <textarea id="text-area">choose colors...</textarea>
+    <br />
+    <label for="cp-font">Font color</label>
+	<input type="color" id="cp-font"/>
+    <br />
+    <label for="cp-background">Background color</label>
+	<input type="color" id="cp-background"/>
+    <script>
+        // 4. Create a text area and two inputs with type="color"
+        // Make the font color of the text area as the value of the first color input
+        // Make the background color of the text area as the value of the second input
+
+        function setEvents() {
+            var fontCP = document.getElementById('cp-font');
+            var backgroundCP = document.getElementById('cp-background');
+            debugger;
+            fontCP.onchange = changeFontColor;
+            backgroundCP.onchange = changeBackgroundColor;
+        }
+
+        function changeFontColor() {
+            document.getElementById('text-area').style.color = this.value;
+        }
+
+        function changeBackgroundColor() {
+            document.getElementById('text-area').style.backgroundColor = this.value;
+        }
+    </script>
+</body>
+</html>

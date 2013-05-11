@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Five Divs Circle</title>    
+</head>
+<body>
+    <label for="tb-count">Divs count: </label>
+	<input type="text" id="tb-count" value="5"/>
+    <label for="cb-improved">Improved version: </label>
+	<input type="checkbox" id="cb-improved"/>
+    <input id="CreateDivsBt" type="button" value="Rotate" onclick="start();" />
+    <input id="StopBT" type="button" value="Stop" onclick="stop();" />
+    <div id="display" style="position: relative;">
+    </div>
+    <script>
+        // 2. Write a script that creates 5 div elements and moves them in circular path with interval of 100 milliseconds
+        var setiIntervalId;
+
+        function stop() {
+            clearInterval(setiIntervalId);
+            clearAllDivs('display');
+        }
+
+        function start() {
+            var divsCount = parseInt(document.getElementById('tb-count').value);
+            var improvedVersion = document.getElementById('cb-improved').checked;
+            debugger;
+            var angleStep = Math.floor(360 / divsCount);
+            var divsArr = [];
+            var anglesArr = [];
+            var radius = 50;
+            var center = new Point(300, 300);
+            var parentElement = document.getElementById('display');
+            var radiusChange = 0.5;
+
+            for (var i = 0; i < divsCount; i++) {
+                anglesArr.push(angleStep * i);
+                var div = createDiv(getDivCoordinates(anglesArr[i], radius, center));
+                divsArr.push(div);
+                parentElement.appendChild(div);
+            }
+
+            if (improvedVersion) {
+                setiIntervalId = setInterval(function () {
+                    for (var j = 0; j < divsCount; j++) {
+                        var div = divsArr[j];
+                        var coordinates = getDivCoordinates(anglesArr[j]++, radius, center);
+                        div.style.left = coordinates.x + 'px';
+                        div.style.top = coordinates.y + 'px';
+                        if (improvedVersion) {
+                            radius += radiusChange;
+                            if (radius < 10 || 150 < radius) {
+                                radiusChange *= -1;
+                            }
+                        }
+                    }
+                }, 5);
+            }
+            else {
+                setiIntervalId = setInterval(function () {
+                    for (var j = 0; j < divsCount; j++) {
+                        var div = divsArr[j];
+                        var coordinates = getDivCoordinates(anglesArr[j]++, radius, center);
+                        div.style.left = coordinates.x + 'px';
+                        div.style.top = coordinates.y + 'px';
+                    }
+                }, 5);
+            }
+        }
+
+        
+
+        function getDivCoordinates(angleInGrad, distanceToCenter, center) {
+            var x = Math.floor(center.x + distanceToCenter * Math.cos(toRadians(angleInGrad)));
+            var y = Math.floor(center.y + distanceToCenter * Math.sin(toRadians(angleInGrad)));
+
+            return new Point(x, y);
+        }
+
+        function toRadians (angle) {
+            return angle * (Math.PI / 180);
+        }
+
+        function Point(x, y) {
+            var point = { x: x, y: y };
+            return point;
+        }
+
+        function createDiv(coordinates) {
+            var div = document.createElement('div');
+            div.style.width = '10px';
+            div.style.height = '10px';
+            div.style.backgroundColor = 'red';
+            div.style.position = 'absolute';
+            div.style.left = coordinates.x + 'px';
+            div.style.top = coordinates.y + 'px';
+            return div;
+        }
+
+        function clearAllDivs(elementId) {
+            var parentElement = document.getElementById(elementId);
+            parentElement.innerHTML = '';
+            //var elementsToRemove = parentElement.getElementsByTagName('div');
+            //while (elementsToRemove.length > 0) {
+            //    parentElement.removeChild(elementsToRemove[0]);
+            //}
+        }
+    </script>
+</body>
+</html>

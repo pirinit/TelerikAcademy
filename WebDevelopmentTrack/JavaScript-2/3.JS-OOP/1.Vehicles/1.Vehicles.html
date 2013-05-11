@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Vehicles</title>
+    <script src="VehicleNS.js"></script>
+    <script>
+        var car = new vehicleNS.LandVehicle(10, 15);
+        console.log('Car speed: ' + car.speed);
+        car.accelerate();
+        console.log('Car speed after acceleration: ' + car.speed);
+
+        var airplane = new vehicleNS.AirVehicle(1300, new vehicleNS.Nozzle(250, false));
+        console.log('Airplane speed: ' + airplane.speed);
+        airplane.accelerate();
+        console.log('Airplane speed after acceleration with afterburners set to OFF: ' + airplane.speed);
+        airplane.switchAfterburner();
+        airplane.accelerate();
+        console.log('Airplane speed after acceleration with afterburners set to ON: ' + airplane.speed);
+
+        var boat = new vehicleNS.WaterVehicle(20, 2, 7, vehicleNS.spinDirection.clockwise);
+        console.log('Initial boat speed: ' + boat.speed);
+        boat.accelerate();
+        console.log('Boat speed after acceleration: ' + boat.speed);
+        boat.setSpinDirection(vehicleNS.spinDirection.counterClockwise);
+        boat.accelerate();
+        console.log('Boat speed after spin direction change and acceleration: ' + boat.speed);
+    </script>
+</head>
+<body>
+    <h1>See console :)</h1>
+</body>
+</html>

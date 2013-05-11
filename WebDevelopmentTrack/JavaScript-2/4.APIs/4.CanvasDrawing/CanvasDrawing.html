@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Canvas Drawing</title>
+    
+</head>
+<body>
+    <p>You can set the x and y offset and the final dimensions of the desired figure. Then press the appropriate button.</p>
+    <label for="tb-x">X: </label>
+    <input type="text" id="tb-x" value="5" />
+    <label for="tb-y">Y: </label>
+    <input type="text" id="tb-y" value="5" />
+    <br />
+    <label for="tb-width">Width: </label>
+    <input type="text" id="tb-width" value="250" />
+    <label for="tb-height">Height: </label>
+    <input type="text" id="tb-height" value="300" />
+    <br />
+    <button onclick="painter.drawHouse()">Draw house</button>
+    <button onclick="painter.drawHead()">Draw head</button>
+    <button onclick="painter.drawBycicle()">Draw bycicle</button>
+    <button onclick="painter.clear()">Clear</button>
+    <br />
+    <canvas id="canvas" width="800" height="850"></canvas>
+</body>
+    <script src="CanvasDrawing.js"></script>
+</html>

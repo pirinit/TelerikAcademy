@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Random Divs Creator</title>
+</head>
+<body>
+    <label for="tb-count">Divs count: </label>
+	<input type="text" id="tb-count" value="20"/>
+    <input id="CreateDivs" type="button" value="Create Divs" onclick="createDivs();" />
+    <input id="RemoveDivs" type="button" value="Remove Divs" onclick="clearAllDivs('display');" />
+    <script src="RandomDivsCreator.js"></script>
+    <div id="display" style="position: relative;">
+    </div>
+    <script>
+        // 1. Write a script that creates a number of div elements.Each div element must have the following
+        //  Random width and height between 20px and 100px
+        //  Random background color
+        //  Random font color
+        //  Random position on the screen (position:absolute)
+        //  A strong element with text "div" inside the div
+        //  Random border-radius
+        //  Random border color
+        //  Random border-width between 1px and 20px
+
+        function createDivs() {
+            var count = document.getElementById('tb-count').value;
+            var element = document.getElementById('display');
+            for (var i = 0; i < count; i++) {
+                createRandomDiv(element);
+            }
+        }
+    </script>
+</body>
+</html>

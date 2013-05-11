@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Simple carousel</title>
+        <style>
+            #wraper
+            {
+                position: relative;
+            }
+            #carousel
+            {
+                overflow: hidden;
+                width: 800px;
+                height: 200px;
+                border: 2px solid black;
+
+                position: absolute;
+                left: 0px;
+                top: 40px;
+            }
+            .button
+            {
+                background-color: lightblue;
+                transition: opacity 1s;
+                opacity: 0.4;
+                width: 40px;
+                height: 20px;
+                font-size: 16pt;
+                border: 2px dotted green;
+                position: absolute;
+                top: 80px;
+            }
+                .button:hover
+                {
+                    transition: opacity 1s;
+                    opacity: 1;
+                }
+            .right
+            {
+                left: 760px;
+            }
+            .carouselElement
+            {
+                transition: left 0.5s;
+                width: 200px;
+                height: 200px;
+                border: 1px solid blue;
+                position: absolute;
+                left: 50px;
+                font-size: 20pt;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wraper">
+            <button onclick="carousel.start()">Start</button>
+            <button onclick="carousel.stop()">Stop</button>
+            <div id="carousel"></div>
+            <div class="button left" onclick="carousel.left()">
+                <<<
+            </div>
+            <div class="button right" onclick="carousel.right()">
+                >>>
+            </div>
+        </div>
+    </body>
+    <script src="Carousel.js"></script>
+</html>

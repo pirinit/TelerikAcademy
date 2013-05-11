@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Console Module</title>
+    <script>
+        var myConsole = (function () {
+            function formatString(args) {
+                if (args.length === 0) {
+                    return undefined;
+                }
+                else if (args.length === 1) {
+                    return args[0].toString();
+                }
+                else {
+                    var length = args.length - 1;
+                    var format = args[0].toString();
+                    debugger;
+                    for (var i = 0; i < length; i++) {
+                        var regex = new RegExp('\\{' + i + '\\}', 'g');
+                        format = format.replace(regex, args[i + 1].toString());
+                    }
+                    return format;
+                }
+            }
+
+            function writeLine() {
+                console.log(formatString(arguments));
+            }
+
+            function writeError() {
+                console.error(formatString(arguments));
+            }
+
+            function writeWarning() {
+                console.warn(formatString(arguments));
+            }
+
+            return {
+                writeLine: writeLine,
+                writeError: writeError,
+                writeWarning: writeWarning
+            }
+        })();
+    </script>
+</head>
+<body>
+    <script>
+        myConsole.writeLine('test without formating');
+        myConsole.writeLine('test with {0} formating... and {0} more formathing... second parameter is {1}', 'some', 'testTESTtest');
+
+        myConsole.writeError('test without formating');
+        myConsole.writeError('test with {0} formating', 'some');
+
+        myConsole.writeWarning('test without formating');
+        myConsole.writeWarning('test with {0} formating', 'some');
+    </script>
+</body>
+</html>

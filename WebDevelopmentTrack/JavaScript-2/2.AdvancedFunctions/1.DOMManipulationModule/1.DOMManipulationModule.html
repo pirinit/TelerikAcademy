@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>DOM Manipulation Module</title>
+</head>
+<body>
+    <h1>
+        Test of the module: 
+    </h1>
+    <script>
+        var domModule = (function () {
+            var elementBuffer = {};
+
+            function addChild(element, parentSelector) {
+                var parent = document.querySelector(parentSelector);
+                parent.appendChild(element);
+            }
+
+            function removeChild(parentSelector, childSelector) {
+                var parent = document.querySelector(parentSelector);
+                var child = parent.querySelector(childSelector);
+                parent.removeChild(child);
+            }
+
+            function addHandler(elementSelector, eventType, eventHandler) {
+                var element = document.querySelector(elementSelector);
+                element.addEventListener(eventType, eventHandler, false);
+            }
+
+            function appendToBuffer(parentSelector, element) {
+                if (!elementBuffer[parentSelector]) {
+                    elementBuffer[parentSelector] = {
+                        size: 1,
+                        docFragment : document.createDocumentFragment()
+                    }
+                }
+                elementBuffer[parentSelector].docFragment.appendChild(element);
+                elementBuffer[parentSelector].size++;
+                
+                if (elementBuffer[parentSelector].size >= 100) {
+                    var parent = document.querySelector(parentSelector);
+                    parent.appendChild(elementBuffer[parentSelector].docFragment);
+                    delete elementBuffer[parentSelector];
+                    debugger;
+                }
+            }
+
+            function getElement(selector) {
+                return document.querySelector(selector);
+            }
+
+            return {
+                addChild: addChild,
+                removeChild: removeChild,
+                addHandler: addHandler,
+                appendToBuffer: appendToBuffer,
+                getElement: getElement
+            }
+        })();
+
+        var div = document.createElement('div');
+        div.innerText = 'tets';
+        div.className = 'display';
+
+        var div1 = document.createElement('div');
+        div1.innerText = 'te2dadasts';
+        div1.className = 'toremove';
+
+        domModule.addChild(div, 'body');
+        domModule.addChild(div.cloneNode(true), 'body');
+        domModule.addChild(div1, 'body');
+        domModule.removeChild('body', '.toremove');
+
+        var span = document.createElement('span');
+        span.innerText = 's';
+        for (var i = 0; i < 95; i++) {
+            domModule.appendToBuffer('body>div.display', span.cloneNode(true));
+        }
+
+        for (var i = 0; i < 95; i++) {
+            domModule.appendToBuffer('body', span.cloneNode(true));
+        }
+
+        
+
+        for (var i = 0; i < 10; i++) {
+            domModule.appendToBuffer('body', span.cloneNode(true));
+        }
+        for (var i = 0; i < 10; i++) {
+            domModule.appendToBuffer('body>div.display', span.cloneNode(true));
+        }
+    </script>
+</body>
+</html>

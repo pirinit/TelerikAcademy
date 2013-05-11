@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Tag Cloud Generator</title> 
+    <style>
+        .container
+        {
+            display: inline-block;
+            float: left;
+            border: 1px solid red;
+            width: 250px;
+        }
+        .container > span
+        {
+            margin: 5px;
+            padding: 2px;
+            display: inline-block;
+        }
+    </style>   
+</head>
+<body>
+    <label for="tb-min">Min font size: </label>
+	<input type="text" id="tb-min" value="17"/>
+    <label for="tb-max">Max font size: </label>
+	<input type="text" id="tb-max" value="43"/>
+    <input id="CreateDivs" type="button" value="Generate" onclick="generate();" />
+    <input id="StopBT" type="button" value="Clear" onclick="clearAllDivs('display');" />
+    <div id="display" style="position: relative;">
+    </div>
+    <script>
+        // 5. Create a tag cloud:
+        // Visualize a string of tags (strings) in a given container
+        // By given minFontSize and maxFontSize, generate the tags with different font-size, depending on the number of occurrences
+
+        function generate() {
+            var tags = ["cms", "javascript", "js", "ASP.NET MVC", ".net",
+                ".net", "css", "wordpress", "wordpress", "wordpress", "wordpress", "wordpress", "xaml", "js", "http", "web",
+                "asp.net", "asp.net MVC", "ASP.NET MVC", "wp", "javascript",
+                "js", "cms", "html", "javascript", "http", "http", "CMS", "http", "http", "http", "http", "http", "http"];
+            var minFontSize = document.getElementById('tb-min').value | 0;
+            var maxFontSize = document.getElementById('tb-max').value | 0;
+            var tagCloud = generateTagCloud(tags, minFontSize, maxFontSize);
+            var displayDiv = document.getElementById('display');
+            displayDiv.appendChild(tagCloud);
+        }
+
+        function generateTagCloud(tags, minFontSize, maxFontSize) {
+            var occurrencies = countOccurrencies(tags);
+            var minCount = tags.length + 1;
+            var maxCount = -1;
+            var fontStep;
+            var fontSize;
+            for (var i in occurrencies) {
+                if (occurrencies[i] > maxCount) {
+                    maxCount = occurrencies[i];
+                }
+
+                if (occurrencies[i] < minCount) {
+                    minCount = occurrencies[i];
+                }
+            }
+            
+            fontStep = ((maxFontSize - minFontSize) / (maxCount - minCount)) | 0;
+            debugger;
+
+            var divContainer = document.createElement('div');
+            //divContainer.style.width = '150px';
+            divContainer.className = 'container';
+
+            for (var i in occurrencies) {
+                fontSize = (occurrencies[i] - minCount)* fontStep + minFontSize;
+                divContainer.appendChild(generateTagSpan(i, fontSize));
+            }
+            return divContainer;
+        }
+
+        function generateTagSpan(tag, fontSize) {
+            var span = document.createElement('span');
+            span.innerText = tag;
+            span.style.fontSize = fontSize + 'px';
+
+            return span;
+        }
+
+        function countOccurrencies(arr) {
+            var result = {};
+            var length = arr.length;
+            var currentTag;
+            for (var i = 0; i < length; i++) {
+                currentTag = arr[i].toLowerCase();
+                if (result[currentTag]) {
+                    result[currentTag]++;
+                }
+                else {
+                    result[currentTag] = 1;
+                }
+            }
+
+            return result;
+        }
+
+        function clearAllDivs(elementId) {
+            debugger;
+            var parentElement = document.getElementById(elementId);
+            parentElement.innerHTML = '';
+        }
+    </script>
+</body>
+</html>
