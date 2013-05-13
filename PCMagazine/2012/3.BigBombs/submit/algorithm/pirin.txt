@@ -1,0 +1,12 @@
+10
+mine 0 0
+chickens 33 1 0
+mine 38 0
+chickens 34 37 0
+mine 19 19
+chickens 34 19 18
+mine 3 10
+chickens 35 4 10
+mine 35 10
+chickens 34 34 10
+ 

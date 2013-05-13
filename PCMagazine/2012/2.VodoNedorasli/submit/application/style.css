@@ -1,0 +1,147 @@
+body
+{
+height: 1024px;
+background-color: #09051f;
+}
+
+div#container
+{
+width: 100%;
+top: 275px;
+border: 0px solid yellow;
+background-image: url('stars.jpg');
+height: 100%;
+z-index: -3;
+}
+header
+{
+position: fixed;
+top: 0px;
+right: 0px;
+width: 100%;
+height: 275px;
+background-image: url('milky_way.jpg');
+background-repeat: no-repeat;
+background-size: 322px 275px;
+background-position: right;
+border: 0px solid blue;
+display: inline-block;
+}
+
+footer
+{
+
+width: 100%;
+height: 45%;
+border: 0px solid red;
+position: fixed;
+left: 0px;
+bottom: 0px;
+background-image: url('footer.jpg');
+background-size: 100% 100%;
+background-repeat: no-repeat;
+}
+
+section#main
+{
+	position: absolute;
+	top: 150px;
+	left: 350px;
+	width: 50%;
+	min-width: 600px;
+	height: 50%;
+	display: inline-block;
+	border-left: 2px solid white;
+	border-right: 2px solid white;
+	
+	background-color: white;
+	opacity:0.6;
+	z-index: 1;	
+	border-bottom: 5px solid green;
+	border-top-left-radius: 2em;
+	border-top-right-radius: 2em;
+	border-bottom-right-radius: 2em;
+	
+}
+nav#main_menu 
+{	
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 42px;
+	border-bottom: 2px solid red;
+}
+nav#main_menu > ul
+{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	margin-top: 0px;
+	list-style-type: hebrew; 
+	border: 0px solid yellow;
+	height: 42px;
+}
+li 
+{
+display: inline-block;
+color: red;
+font-size: 18px;
+font-family: Georgia, Times New Roman;
+opacity: 1.0;
+font-weight: bold;
+padding-right: 0px;
+height: 42px;
+border: 0px solid blue;
+text-align: center;
+
+}
+ a{ text-decoration: none; height: 42px; border: 0px solid blue; display: inline-block; width: 90%; padding-right: 15px; vertical-align: center;} 
+
+a:link    {color: black;}
+a:visited {color: black;}
+a:hover   {background-color:grey;}
+a:active  {background-color:grey;}
+
+.current
+{
+background-color:grey;
+
+}
+article.main
+{
+	position: relative;
+	top: 50px;
+	left: 10px;
+	width: 96%;
+	height: 88%;
+	margin-bottom: 5px;
+	overflow: auto;
+	padding-left: 5px;
+	padding-right: 5px;
+	text-align:justify;
+	text-indent: 15px;
+	
+}
+
+article.elements
+{
+	position: relative;
+	top: 50px;
+	float: right;
+	height: 80%;
+	width: 96%;	
+	margin-bottom: 5px;
+	overflow: auto;
+	border: 0px solid blue;
+	overflow: auto;
+	text-align: center;
+}
+
+img.algorithm
+{
+display: block;
+margin-left: auto;
+margin-right: auto;
+}
+

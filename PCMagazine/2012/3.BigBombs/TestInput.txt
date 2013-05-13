@@ -1,0 +1,302 @@
+5
+chickens 6 2 2
+mine 3 3
+chickens 1 0 1
+chickens 3 1 3
+mine 9 9
+
+10
+chickens 6 2 2
+mine 3 3
+chickens 1 0 1
+chickens 32 4 4
+chickens 5 0 0
+chickens 5 100 100
+mine 4 3 
+mine 50 55
+chickens 13 11 11
+chickens 15 9 9
+
+5
+mine 5 5
+chickens 100 4 4
+chickens 50 6 6
+chickens 250 4 5
+chickens 50 7 6
+
+4
+chickens 5 1 2
+chickens 6 3 2
+mine 2 2
+chickens 4 3 3
+
+// test to be submited
+6
+mine 0 0
+chickens 60 1 0
+mine 36 0
+chickens 61 35 0
+mine 18 18
+chickens 61 18 17
+
+10
+mine 0 0
+chickens 33 1 0
+mine 38 0
+chickens 34 37 0
+mine 19 19
+chickens 34 19 18
+mine 3 10
+chickens 35 4 10
+mine 35 10
+chickens 34 34 10
+ 
+10
+mine 0 0
+mine 100 100
+mine 50 50
+mine 60 60
+mine 5 5
+mine 0 40
+chickens 5 6 66
+chickens 10 5 88
+chickens 7 70 30
+chickens 9 3 98
+
+33
+mine 0 0
+mine 5 5
+mine 10 10
+mine 15 15
+mine 20 20
+mine 25 25
+mine 30 30
+mine 35 35
+mine 40 40
+mine 45 45
+mine 50 50
+mine 55 55
+mine 60 60
+mine 65 65
+mine 70 70
+mine 75 75
+mine 80 80
+mine 85 85
+mine 90 90
+mine 95 95
+mine 100 100
+mine 97 3
+mine 92 8
+mine 87 13
+mine 82 18
+mine 77 23
+mine 72 28
+mine 67 33
+mine 62 38
+mine 57 43
+mine 52 48
+mine 47 53
+mine 42 58
+
+200
+chickens 1 0 0
+chickens 1 1 1
+chickens 1 2 2
+chickens 1 3 3
+chickens 1 4 4
+chickens 1 5 5
+chickens 1 6 6
+chickens 1 7 7
+chickens 1 8 8
+chickens 1 9 9
+chickens 1 10 10
+chickens 1 11 11
+chickens 1 12 12
+chickens 1 13 13
+chickens 1 14 14
+chickens 1 15 15
+chickens 1 16 16
+chickens 1 17 17
+chickens 1 18 18
+chickens 1 19 19
+chickens 1 20 20
+chickens 1 21 21
+chickens 1 22 22
+chickens 1 23 23
+chickens 1 24 24
+chickens 1 25 25
+chickens 1 26 26
+chickens 1 27 27
+chickens 1 28 28
+chickens 1 29 29
+chickens 1 30 30
+chickens 1 31 31
+chickens 1 32 32
+chickens 1 33 33
+chickens 1 34 34
+chickens 1 35 35
+chickens 1 36 36
+chickens 1 37 37
+chickens 1 38 38
+chickens 1 39 39
+chickens 1 40 40
+chickens 1 41 41
+chickens 1 42 42
+chickens 1 43 43
+chickens 1 44 44
+chickens 1 45 45
+chickens 1 46 46
+chickens 1 47 47
+chickens 1 48 48
+chickens 1 49 49
+chickens 1 50 50
+chickens 1 51 51
+chickens 1 52 52
+chickens 1 53 53
+chickens 1 54 54
+chickens 1 55 55
+chickens 1 56 56
+chickens 1 57 57
+chickens 1 58 58
+chickens 1 59 59
+chickens 1 60 60
+chickens 1 61 61
+chickens 1 62 62
+chickens 1 63 63
+chickens 1 64 64
+chickens 1 65 65
+chickens 1 66 66
+chickens 1 67 67
+chickens 1 68 68
+chickens 1 69 69
+chickens 1 70 70
+chickens 1 71 71
+chickens 1 72 72
+chickens 1 73 73
+chickens 1 74 74
+chickens 1 75 75
+chickens 1 76 76
+chickens 1 77 77
+chickens 1 78 78
+chickens 1 79 79
+chickens 1 80 80
+chickens 1 81 81
+chickens 1 82 82
+chickens 1 83 83
+chickens 1 84 84
+chickens 1 85 85
+chickens 1 86 86
+chickens 1 87 87
+chickens 1 88 88
+chickens 1 89 89
+chickens 1 90 90
+chickens 1 91 91
+chickens 1 92 92
+chickens 1 93 93
+chickens 1 94 94
+chickens 1 95 95
+chickens 1 96 96
+chickens 1 97 97
+chickens 1 98 98
+chickens 1 99 99
+chickens 1 100 100
+chickens 1 100 0
+chickens 1 99 1
+chickens 1 98 2
+chickens 1 97 3
+chickens 1 96 4
+chickens 1 95 5
+chickens 1 94 6
+chickens 1 93 7
+chickens 1 92 8
+chickens 1 91 9
+chickens 1 90 10
+chickens 1 89 11
+chickens 1 88 12
+chickens 1 87 13
+chickens 1 86 14
+chickens 1 85 15
+chickens 1 84 16
+chickens 1 83 17
+chickens 1 82 18
+chickens 1 81 19
+chickens 1 80 20
+chickens 1 79 21
+chickens 1 78 22
+chickens 1 77 23
+chickens 1 76 24
+chickens 1 75 25
+chickens 1 74 26
+chickens 1 73 27
+chickens 1 72 28
+chickens 1 71 29
+chickens 1 70 30
+chickens 1 69 31
+chickens 1 68 32
+chickens 1 67 33
+chickens 1 66 34
+chickens 1 65 35
+chickens 1 64 36
+chickens 1 63 37
+chickens 1 62 38
+chickens 1 61 39
+chickens 1 60 40
+chickens 1 59 41
+chickens 1 58 42
+chickens 1 57 43
+chickens 1 56 44
+chickens 1 55 45
+chickens 1 54 46
+chickens 1 53 47
+chickens 1 52 48
+chickens 1 51 49
+chickens 1 50 50
+chickens 1 49 51
+chickens 1 48 52
+chickens 1 47 53
+chickens 1 46 54
+chickens 1 45 55
+chickens 1 44 56
+chickens 1 43 57
+chickens 1 42 58
+chickens 1 41 59
+chickens 1 40 60
+chickens 1 39 61
+chickens 1 38 62
+chickens 1 37 63
+chickens 1 36 64
+chickens 1 35 65
+chickens 1 34 66
+chickens 1 33 67
+chickens 1 32 68
+chickens 1 31 69
+chickens 1 30 70
+chickens 1 29 71
+chickens 1 28 72
+chickens 1 27 73
+chickens 1 26 74
+chickens 1 25 75
+chickens 1 24 76
+chickens 1 23 77
+chickens 1 22 78
+chickens 1 21 79
+chickens 1 20 80
+chickens 1 19 81
+chickens 1 18 82
+chickens 1 17 83
+chickens 1 16 84
+chickens 1 15 85
+chickens 1 14 86
+chickens 1 13 87
+chickens 1 12 88
+chickens 1 11 89
+chickens 1 10 90
+chickens 1 9 91
+chickens 1 8 92
+chickens 1 7 93
+chickens 1 6 94
+chickens 1 2 97
+chickens 1 2 96
+chickens 1 3 97
+chickens 1 2 98
+
