@@ -7,7 +7,7 @@ namespace _5.HashedSet
 {
     public class HashedSet<T> : IEnumerable<T>
     {
-        private HashTable<int, T> hashTable;
+        private HashTable<T, int> hashTable;
 
         public int Count
         {
@@ -19,23 +19,23 @@ namespace _5.HashedSet
 
         public HashedSet()
         {
-            this.hashTable = new HashTable<int, T>(17);
+            this.hashTable = new HashTable<T, int>(17);
         }
 
         public void Add(T value)
         {
-            this.hashTable.Add(value.GetHashCode(), value);
+            this.hashTable.Add(value, 0);
         }
 
         // implementig Find(T) is useless, so I implemented Contains(T)
         public bool Contains(T value)
         {
-            return this.hashTable.Contains(value.GetHashCode());
+            return this.hashTable.Contains(value);
         }
 
         public void Remove(T value)
         {
-            this.hashTable.Remove(value.GetHashCode());
+            this.hashTable.Remove(value);
         }
 
         public void Clear()
@@ -47,20 +47,19 @@ namespace _5.HashedSet
         {
             foreach (var item in other)
             {
-                this.hashTable.TryAdd(item.GetHashCode(), item);
+                this.hashTable.TryAdd(item, 0);
             }
         }
 
         public void IntersectWith(IEnumerable<T> other)
         {
-            HashTable<int, T> newHashTable = new HashTable<int, T>();
+            HashTable<T, int> newHashTable = new HashTable<T, int>();
 
             foreach (var item in other)
             {
-                int currentItemHashCode = item.GetHashCode();
-                if(this.hashTable.Contains(currentItemHashCode))
+                if(this.hashTable.Contains(item))
                 {
-                    newHashTable.Add(currentItemHashCode, item);
+                    newHashTable.Add(item, 0);
                 }
             }
 
@@ -69,7 +68,7 @@ namespace _5.HashedSet
 
         public IEnumerator<T> GetEnumerator()
         {
-            foreach (var value in this.hashTable.Values)
+            foreach (var value in this.hashTable.Keys)
             {
                 yield return value;
             }
@@ -84,7 +83,7 @@ namespace _5.HashedSet
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("{");
-            foreach (var item in this.hashTable.Values)
+            foreach (var item in this.hashTable.Keys)
             {
                 sb.AppendFormat(" {0},", item);
             }
