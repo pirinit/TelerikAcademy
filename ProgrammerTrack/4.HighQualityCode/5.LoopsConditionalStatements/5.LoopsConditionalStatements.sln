@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1.Cheff", "1.Cheff\1.Cheff.csproj", "{A96FA5C9-D7A1-4040-968E-04854F1417FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3.Loop", "3.Loop\3.Loop.csproj", "{40C1285F-57F1-46DD-BB03-5F0D0CC27FE8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2.IfStatement", "2.IfStatement\2.IfStatement.csproj", "{4C44CF9B-6450-49CB-A844-3D93116DC2F2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A96FA5C9-D7A1-4040-968E-04854F1417FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A96FA5C9-D7A1-4040-968E-04854F1417FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A96FA5C9-D7A1-4040-968E-04854F1417FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A96FA5C9-D7A1-4040-968E-04854F1417FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40C1285F-57F1-46DD-BB03-5F0D0CC27FE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40C1285F-57F1-46DD-BB03-5F0D0CC27FE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40C1285F-57F1-46DD-BB03-5F0D0CC27FE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40C1285F-57F1-46DD-BB03-5F0D0CC27FE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C44CF9B-6450-49CB-A844-3D93116DC2F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C44CF9B-6450-49CB-A844-3D93116DC2F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C44CF9B-6450-49CB-A844-3D93116DC2F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C44CF9B-6450-49CB-A844-3D93116DC2F2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

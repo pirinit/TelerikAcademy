@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="besenica" Collapsed="true">
+    <Position X="5.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAEAAAAAAABAQIAAggAEAAAIAAAACAACAAAIAgAAA=</HashCode>
+      <FileName>besenica.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hangman" Collapsed="true">
+    <Position X="7.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Hangman.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScoreBoard" Collapsed="true">
+    <Position X="3.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAIAABAAAAAgAAAAAAIAQAAAAAAAAAAAEQBE=</HashCode>
+      <FileName>ScoreBoard.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
